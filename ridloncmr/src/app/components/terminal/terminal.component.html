@@ -1,0 +1,16 @@
+<div class="terminal">
+    <div class="terminal-header">C:\Users\You></div>
+    <div class="terminal-body">
+      <div *ngFor="let line of outputHistory" class="output">{{ line }}</div>
+      <div class="input-line">
+        <span class="prompt">></span>
+        <input
+          type="text"
+          [(ngModel)]="commandInput"
+          (keyup.enter)="handleCommand()"
+          autofocus
+        />
+      </div>
+    </div>
+  </div>
+  

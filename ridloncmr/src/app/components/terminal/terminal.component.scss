@@ -1,0 +1,50 @@
+.terminal {
+    width: 800px;
+    height: 400px;
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Console', Monaco, monospace;
+    border: 2px solid gray;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+.terminal-body {
+    flex: 1;
+    padding: 5px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.terminal-body::-webkit-scrollbar {
+    display: none;
+}
+
+.output {
+    color: lightgray;
+    white-space: pre-wrap;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: #0f0;
+    margin-right: 5px;
+}
+
+input {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    font-family: 'Lucida Console', Monaco, monospace;
+}
