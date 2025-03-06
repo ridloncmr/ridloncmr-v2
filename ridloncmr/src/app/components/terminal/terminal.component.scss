@@ -1,50 +1,89 @@
 .terminal {
-    width: 800px;
-    height: 400px;
-    background-color: black;
-    color: white;
-    font-family: 'Lucida Console', Monaco, monospace;
-    border: 2px solid gray;
-    padding: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  width: 800px;
+  height: 400px;
+  background-color: black;
+  color: white;
+  font-family: 'Lucida Console', Monaco, monospace;
+  border: 2px solid gray;
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .terminal-body {
-    flex: 1;
-    padding: 5px;
-    overflow-y: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  flex: 1;
+  padding: 5px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: auto;
+  font-family: 'Lucida Console', Monaco, monospace;
+}
+
+.terminal-header {
+  padding-bottom: 2px;
 }
 
 .terminal-body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .output {
-    color: lightgray;
-    white-space: pre-wrap;
+  color: lightgray;
+  white-space: pre-wrap;
 }
 
 .input-line {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .prompt {
-    color: #0f0;
-    margin-right: 5px;
+  color: #0f0;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 5px;
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.suggestion-inline {
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.4); /* Keep cycling suggestions gray */
+  font-style: italic;
+  pointer-events: none;
+  user-select: none;
 }
 
 input {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    width: 100%;
-    outline: none;
-    font-family: 'Lucida Console', Monaco, monospace;
+  background: none;
+  border: none;
+  color: #0f0; /* Green text for fully applied command */
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  font-family: 'Lucida Console', Monaco, monospace;
+  caret-color: #0f0;
+  position: relative;
+}
+
+
+
+@media (max-width: 850px) {
+  .terminal {
+    width: 95vw;
+    position: fixed;
+    transform: none;
+  }
 }
