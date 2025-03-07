@@ -1,4 +1,9 @@
 import { FileNode } from "../core/models/file-node.model";
+import { BridgeOfDeath } from "./stories/bridge-of-death";
+import { GlitchedOut } from "./stories/glitched-out";
+import { HungerThatRemains } from "./stories/hunger-that-remains";
+import { TheChildWhoSeesTooMuch } from "./stories/the-child-who-sees-too-much";
+import { VanishingPoint } from "./stories/vanishing-point";
 
 
 export const CONTENT_DATA: FileNode[] = [
@@ -9,8 +14,13 @@ export const CONTENT_DATA: FileNode[] = [
     new FileNode('introduction', 'Introduction.txt', 'file', "Welcome to my personal site! You can explore sections using `cd` and `dir` commands.")
   ]),
   new FileNode('stories', 'Stories', 'directory', undefined, false, [
-    new FileNode('glitched-out', 'GlitchedOut.txt', 'file', "GlitchedOut is a horror ARG about a world consumed by glitches and anomalies."),
-    new FileNode('sky-pirates', 'SkyPirates.txt', 'file', "Sky Pirates is a steampunk adventure set in a dying world where airships rule the skies.")
+    new FileNode('GlitchVerse', 'GlitchVerse', 'directory', undefined, false, [
+      new FileNode("glitche-out", "GlitchedOut.txt", "file", GlitchedOut),
+      new FileNode("vanishing-point", "VanishingPoint.txt", "file", VanishingPoint),
+      new FileNode("the-child-who-sees-too-much", "TheChildWhoSeeTooMuch.txt", "file", TheChildWhoSeesTooMuch),
+    ]),
+    new FileNode("hunger-that-remains", "HungerThatRemains.txt", "file", HungerThatRemains),
+    new FileNode("bridge-of-death", "BridgeOfDeath.txt", "file", BridgeOfDeath),
   ]),
   new FileNode('projects', 'Projects', 'directory', undefined, false, [
     new FileNode('playball', 'PlayBall.txt', 'file', "PlayBall.gg is a modern rec league management SaaS focused on frictionless game organization."),
