@@ -106,7 +106,7 @@ export const COMMANDS: Command[] = [
     description: 'Change directory',
     execute: (args, service: CommandService) => {
       if (!args.length) {
-        service.outputHistory.push('Usage: cd <folder>');
+        service.outputHistory.push('Usage: cd <i>&lt; folder &gt;</i>');
         return;
       }
 
@@ -138,7 +138,7 @@ export const COMMANDS: Command[] = [
     description: 'Opens a file',
     execute: (args, service: CommandService) => {
       if (!args.length) {
-        service.outputHistory.push('Usage: open <file>');
+        service.outputHistory.push('Usage: open <i>&lt; file &gt;<i>');
         return;
       }
 

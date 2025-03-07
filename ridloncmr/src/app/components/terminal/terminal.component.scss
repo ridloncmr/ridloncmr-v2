@@ -1,9 +1,9 @@
 .terminal-container {
   display: flex;
-  flex-direction: column; // 🔥 Ensures branding is above the terminal
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px; // 🔥 Small gap to avoid excessive spacing
+  gap: 5px;
   margin-top: 10px;
 }
 
@@ -29,66 +29,19 @@
   -ms-overflow-style: none;  /* IE/Edge */
 }
 
-/* Chrome, Safari */
-.terminal-body::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-  background: transparent;
-}
-
-.output {
-  color: lightgray;
-  white-space: pre;
-  padding: 5px 0;
-}
-
-.input-line {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.prompt {
-  color: #0f0;
-  font-weight: bold;
-  white-space: nowrap;
-  margin-right: 5px;
-  padding-top:5px
-}
-
-.input-container {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-.suggestion-inline {
-  position: absolute;
-  top: 0;
-  color: rgba(255, 255, 255, 0.4);
-  font-style: italic;
-  pointer-events: none;
-  user-select: none;
-}
-
-input {
-  background: none;
-  border: none;
-  color: #0f0;
-  font-size: 16px;
-  width: 100%;
-  outline: none;
-  font-family: 'Lucida Console', Monaco, monospace;
-  caret-color: #0f0;
-  position: relative;
-}
-
-@media (max-width: 850px) {
-  .terminal-container {
-    width: 95vw;
+  /* Chrome, Safari */
+  .terminal-body::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
   }
 
-  .terminal {
-    width: 90vw;
+  @media (max-width: 850px) {
+    .terminal-container {
+      width: 95vw;
+    }
+  
+    .terminal {
+      width: 90vw;
+    }
   }
-}

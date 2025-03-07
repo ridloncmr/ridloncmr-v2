@@ -1,0 +1,46 @@
+.output {
+  color: lightgray;
+  white-space: pre;
+  padding: 5px 0;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.prompt {
+  color: #0f0;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 5px;
+  padding-top: 5px;
+}
+
+.input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.suggestion-inline {
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+  pointer-events: none;
+  user-select: none;
+}
+
+input {
+  background: none;
+  border: none;
+  color: #0f0;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  font-family: "Lucida Console", Monaco, monospace;
+  caret-color: #0f0;
+  position: relative;
+}
