@@ -1,21 +1,38 @@
 .hacker-container {
-    color: #0f0; // Green hacker aesthetic
-    font-family: 'Lucida Console', Monaco, monospace;
-    padding: 10px;
-  }
-  
-  .hacker-output {
-    overflow-y: auto;
-    height: 100%;
-  }
-  
-  .hacker-line {
-    white-space: pre;
-    animation: typeEffect 0.5s ease-in-out;
-  }
-  
-  @keyframes typeEffect {
-    0% { opacity: 0; transform: translateY(-5px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  
+  color: #0f0;
+  font-family: 'Lucida Console', Monaco, monospace;
+  padding: 10px;
+}
+
+.hacker-output {
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #0f0 black;
+}
+
+.hacker-line {
+  white-space: pre;
+}
+
+.typing-line {
+  white-space: pre;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.cursor {
+  display: inline-block;
+  font-weight: bold;
+  color: #0f0;
+  animation: blink 0.8s infinite;
+}
+
+.compilation-text {
+  color: white; /* ✅ Makes compilation messages white */
+  font-weight: bold;
+}

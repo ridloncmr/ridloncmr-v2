@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   template: '',
 })
 export class BaseProgramComponent {
-  constructor(private router: Router) {}
+  constructor(protected router: Router) {}
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
