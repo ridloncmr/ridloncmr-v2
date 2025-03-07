@@ -1,7 +1,7 @@
-@import '../../../../assets/styles/animations.scss';
+@import "../../../../assets/styles/animations.scss";
 
 .info-container {
-  font-family: 'Lucida Console', Monaco, monospace;
+  font-family: "Lucida Console", Monaco, monospace;
   color: lightgray;
   padding: 10px;
   border-bottom: 1px solid rgba(255, 0, 0, 0.2);
@@ -79,6 +79,15 @@
 
     .collapsed-line {
       animation: slideUp 0.3s ease-in-out forwards;
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  .info-container {
+    &.collapsed {
+      height: 25px;
+      padding: 10px;
     }
   }
 }
