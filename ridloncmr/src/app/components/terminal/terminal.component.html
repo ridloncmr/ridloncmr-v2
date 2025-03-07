@@ -1,12 +1,9 @@
 <div class="terminal-container">
   <app-terminal-branding></app-terminal-branding>
-  <div class="terminal" #terminal > 
-    <!-- [class.glitch]="isGlitching" (click)="focusInput()" -->
+  <div class="terminal" #terminal>
     <app-terminal-info></app-terminal-info>
-      <div class="terminal-body">
-        
-          <router-outlet />
-
-        </div>
+    <div class="terminal-body">
+      <router-outlet />
+    </div>
   </div>
 </div>

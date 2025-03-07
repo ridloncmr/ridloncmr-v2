@@ -1,18 +1,20 @@
-<div *ngFor="let line of outputHistory" class="output" [innerHTML]="line"></div>
-<div class="input-line">
-    <span class="prompt">{{ prompt }}</span>
-
-    <div class="input-container">
-      <input
-        #terminalInput
-        type="text"
-        [(ngModel)]="commandInput"
-        (input)="handleInput()"
-        (keyup.enter)="handleCommand()"
-        autofocus
-      />
-      <span #suggestionElement *ngIf="inlineSuggestion" class="suggestion-inline">
-        {{ inlineSuggestion }}
-      </span>
+<div class='terminal-prompt-container' (click)="focusInput()">
+  <div *ngFor="let line of outputHistory" class="output" [innerHTML]="line"></div>
+  <div class="input-line">
+      <span class="prompt">{{ prompt }}</span>
+  
+      <div class="input-container">
+        <input
+          #terminalInput
+          type="text"
+          [(ngModel)]="commandInput"
+          (input)="handleInput()"
+          (keyup.enter)="handleCommand()"
+          autofocus
+        />
+        <span #suggestionElement *ngIf="inlineSuggestion" class="suggestion-inline">
+          {{ inlineSuggestion }}
+        </span>
+      </div>
     </div>
-  </div>
+</div>

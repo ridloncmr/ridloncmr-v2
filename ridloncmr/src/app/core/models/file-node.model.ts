@@ -1,7 +1,7 @@
 export class FileNode {
     id: string;
     name: string;
-    type: 'directory' | 'file';
+    type: 'directory' | 'file' | 'executable';
     children?: FileNode[];
     content?: string;
     isUrl?: boolean;
@@ -9,7 +9,7 @@ export class FileNode {
     constructor(
       id: string,
       name: string,
-      type: 'directory' | 'file',
+      type: 'directory' | 'file' | 'executable',
       content?: string,
       isUrl?: boolean,
       children?: FileNode[]

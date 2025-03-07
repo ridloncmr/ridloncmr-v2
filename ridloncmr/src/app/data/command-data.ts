@@ -170,6 +170,37 @@ export const COMMANDS: Command[] = [
     },
   },
   {
+    name: 'run',
+    description: 'Executes an application or program',
+    execute: (args, service: CommandService) => {
+      if (!args.length) {
+        service.outputHistory.push('Usage: run <program.exe>');
+        return;
+      }
+
+      const programName = args[0].toLowerCase();
+      const validPrograms = ['hacker.exe'];
+
+      if (!validPrograms.includes(programName)) {
+          service.outputHistory.push(`Error: ${programName} not found.`);
+          return;
+      }
+
+      service.outputHistory.push(`Executing ${programName}...`);
+      setTimeout(() => {
+        service.router.navigate(['/program'], { queryParams: { exe: programName } });
+      }, 500);
+    },
+    autoComplete: (args, location) => {
+      return location
+        .filter((item) => item.type === 'file' && item.name.endsWith('.exe')) // Suggests only .exe files
+        .map((item) => item.name)
+        .filter((name) =>
+          args[0] ? name.toLowerCase().startsWith(args[0].toLowerCase()) : true
+        ); // Suggest all on empty input
+    },
+  },
+  {
     name: 'glitch',
     description: 'Toggles glitch effects (on/off)',
     execute: (args, service: CommandService) => {

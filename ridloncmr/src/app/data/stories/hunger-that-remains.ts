@@ -2,7 +2,7 @@ export const HungerThatRemains: string =
 `
 Ellie was always a fighter. She raised two children, survived the war, and still made the best damn Thanksgiving stuffing this side of the Mississippi. She refused to be fragile, refused to slow down, refused to be anything other than the unshakable heart of her family.
 
-But the Hunger came for her.
+<i>But the Hunger came for her.</i>
 
 At first, the doctor called it Parkinson’s—a careful, clinical word that sat cold in her throat. He spoke of dopamine loss, nerve degeneration, muscle rigidity—as if her body was simply a machine breaking down, as if she were just parts failing, wires fraying. But Ellie knew better.
 
@@ -16,7 +16,7 @@ But this was not a battle.
 
 This was a feeding.
 
-And it would not stop.
+<i>And it would not stop.</i>
 
 Ellie began to see it everywhere.
 
@@ -30,7 +30,7 @@ It was in the missed steps, the lost names, the forgotten faces. In the way peop
 
 Ellie would not be one of them.
 
-She refused.
+<i>She refused.</i>
 
 The night it took her name, she woke up gasping. She reached for the word, but it was already gone, already eaten. The Hunger coiled through her bones, patient, waiting.
 
@@ -54,5 +54,5 @@ Her grandchildren would tell her stories.
 
 Her great-grandchildren would grind the bread.
 
-Parkinson’s could feast, but it would never be full.
+<i>Parkinson’s could feast, but it would never be full.</i>
 `;

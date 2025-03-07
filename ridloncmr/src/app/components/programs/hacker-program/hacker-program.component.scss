@@ -1,0 +1,21 @@
+.hacker-container {
+    color: #0f0; // Green hacker aesthetic
+    font-family: 'Lucida Console', Monaco, monospace;
+    padding: 10px;
+  }
+  
+  .hacker-output {
+    overflow-y: auto;
+    height: 100%;
+  }
+  
+  .hacker-line {
+    white-space: pre;
+    animation: typeEffect 0.5s ease-in-out;
+  }
+  
+  @keyframes typeEffect {
+    0% { opacity: 0; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
