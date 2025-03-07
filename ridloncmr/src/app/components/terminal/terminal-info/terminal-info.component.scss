@@ -1,7 +1,5 @@
 @import '../../../../assets/styles/animations.scss';
 
-
-// Terminal info section
 .info-container {
   font-family: 'Lucida Console', Monaco, monospace;
   color: lightgray;
@@ -14,6 +12,8 @@
   flex-direction: column-reverse;
   justify-content: flex-end;
   overflow: hidden;
+  cursor: pointer;
+  transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
 
   .boot-sequence {
     display: flex;
@@ -37,6 +37,21 @@
     opacity: 1;
   }
 
+  .collapsed-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .system-label {
     color: #0f0;
     font-weight: bold;
@@ -56,5 +71,14 @@
 
   &.glitch {
     animation: glitch-effect 0.3s ease-in-out;
+  }
+
+  &.collapsed {
+    height: 20px;
+    padding: 5px;
+
+    .collapsed-line {
+      animation: slideUp 0.3s ease-in-out forwards;
+    }
   }
 }

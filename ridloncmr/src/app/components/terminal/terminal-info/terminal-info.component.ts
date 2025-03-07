@@ -22,6 +22,8 @@ export class TerminalInfoComponent implements OnInit {
   systemInfo: InfoLine[] = [];
   isGlitching: boolean = false;
   isBootComplete: boolean = false; // Controls when to wipe the screen
+  isCollapsed: boolean = false;
+  typingIntervals: any[] = [];
 
   constructor(private commandService: CommandService) {}
 
@@ -106,5 +108,19 @@ export class TerminalInfoComponent implements OnInit {
         this.isGlitching = false;
       }, 250);
     }, Math.random() * 7000 + 3000);
+  }
+
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+
+    if (this.isCollapsed) {
+      this.isBootComplete = true;
+      this.bootLines = [];
+      this.typingIntervals.forEach(interval => clearTimeout(interval));
+      this.systemInfo.forEach(info => {
+        info.displayedValue = info.value;
+        info.isTyping = false;
+      });
+    }
   }
 }

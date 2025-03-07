@@ -1,17 +1,37 @@
-<div class="info-container" [class.glitch]="isGlitching">
+<div
+  class="info-container"
+  [class.glitch]="isGlitching"
+  [class.collapsed]="isCollapsed"
+  (click)="toggleCollapse()"
+>
   <!-- Boot Sequence (Only shows until completed) -->
   <div *ngIf="!isBootComplete" class="boot-sequence">
     <p *ngFor="let line of bootLines" [class.scroll-in]="line.isVisible">
-      {{ line.isVisible ? line.text : '' }}
+      {{ line.isVisible ? line.text : "" }}
     </p>
   </div>
 
   <!-- System Info (Replaces boot logs after completion) -->
   <div *ngIf="isBootComplete" class="system-info show-system-info">
-    <p *ngFor="let info of systemInfo">
-      <span class="system-label">{{ info.label }}</span>
-      <span class="typing-text">{{ info.displayedValue }}</span>
-      <span *ngIf="info.isTyping" class="cursor">█</span> <!-- Simulated cursor -->
-    </p>
+    <ng-container *ngIf="!isCollapsed">
+      <p *ngFor="let info of systemInfo">
+        <span class="system-label">{{ info.label }}</span>
+        <span class="typing-text">{{ info.displayedValue }}</span>
+        <span *ngIf="info.isTyping" class="cursor">█</span>
+        <!-- Simulated cursor -->
+      </p>
+    </ng-container>
+  </div>
+
+  <!-- Collapsed Mode -->
+  <div *ngIf="isCollapsed" class="collapsed-line" [class.visible]="isCollapsed">
+    <span>
+      <span class="system-label">System: </span>
+      <span class="typing-text">{{ systemInfo[0].value }}</span>
+    </span>
+    <span>
+      <span class="system-label">Session ID: </span>
+      <span class="typing-text">{{ systemInfo[3].value }}</span>
+    </span>
   </div>
 </div>
