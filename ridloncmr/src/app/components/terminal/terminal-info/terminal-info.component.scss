@@ -1,0 +1,62 @@
+@import '../../../../assets/styles/animations.scss';
+
+// Terminal info section
+.info-container {
+  font-family: 'Lucida Console', Monaco, monospace;
+  color: lightgray;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+  margin-bottom: 10px;
+  font-size: 14px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+
+  .boot-sequence {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .system-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  .scroll-in {
+    animation: scrollUp 0.6s ease-in-out forwards;
+  }
+
+  .show-system-info {
+    opacity: 1;
+  }
+
+  .system-label {
+    color: #0f0;
+    font-weight: bold;
+  }
+
+  .typing-text {
+    display: inline-block;
+    white-space: pre;
+  }
+
+  .cursor {
+    display: inline-block;
+    font-weight: bold;
+    color: #0f0;
+    animation: blink 0.8s infinite;
+  }
+
+  &.glitch {
+    animation: glitch-effect 0.3s ease-in-out;
+  }
+}

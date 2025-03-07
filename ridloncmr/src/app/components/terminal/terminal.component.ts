@@ -2,11 +2,13 @@ import { Component, ViewChild, ElementRef, AfterViewInit, HostListener, ChangeDe
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommandService } from '../../core/services/command.service';
+import { TerminalBrandingComponent } from './terminal-branding/terminal-branding.component';
+import { TerminalInfoComponent } from './terminal-info/terminal-info.component';
 
 @Component({
   standalone: true,
   selector: 'app-terminal',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TerminalBrandingComponent, TerminalInfoComponent],
   templateUrl: './terminal.component.html',
   styleUrls: ['./terminal.component.scss']
 })
@@ -14,6 +16,7 @@ export class TerminalComponent implements AfterViewInit {
   @ViewChild('terminalInput') terminalInput!: ElementRef;
   @ViewChild('suggestionElement') suggestionElement!: ElementRef;
 
+  isGlitching: boolean = false;
   commandInput: string = '';
   outputHistory: string[] = [];
   suggestions: string[] = [];
@@ -28,10 +31,20 @@ export class TerminalComponent implements AfterViewInit {
 
   ngOnInit() {
     this.outputHistory = this.commandService.getHistory();
+    this.startRandomGlitches();
   }
 
   ngAfterViewInit() {
     this.focusInput();
+  }
+
+  startRandomGlitches() {
+    setInterval(() => {
+      this.isGlitching = true;
+      setTimeout(() => {
+        this.isGlitching = false;
+      }, 250); // Short glitch burst
+    }, Math.random() * 7000 + 3000); // Randomly every 3-10 seconds
   }
 
   @HostListener('document:keydown.tab', ['$event'])

@@ -1,19 +1,20 @@
-<div class="terminal" (click)="focusInput()">
-    <div class="terminal-header">user: admin | password: ***********</div>
+<app-terminal-branding></app-terminal-branding>
+<div class="terminal" #terminal [class.glitch]="isGlitching" (click)="focusInput()">
+  <app-terminal-info></app-terminal-info> <!-- Adds system branding inside the terminal -->
     <div class="terminal-body">
         <div *ngFor="let line of outputHistory" class="output">{{ line }}</div>
-      
+
         <div class="input-line">
           <span class="prompt">{{ prompt }}</span>
-      
+
           <div class="input-container">
-            <input 
+            <input
               #terminalInput
-              type="text" 
-              [(ngModel)]="commandInput" 
+              type="text"
+              [(ngModel)]="commandInput"
               (input)="handleInput()"
-              (keyup.enter)="handleCommand()" 
-              autofocus 
+              (keyup.enter)="handleCommand()"
+              autofocus
             />
             <span #suggestionElement *ngIf="inlineSuggestion" class="suggestion-inline">
               {{ inlineSuggestion }}
@@ -21,5 +22,5 @@
           </div>
         </div>
       </div>
-      
+
 </div>
