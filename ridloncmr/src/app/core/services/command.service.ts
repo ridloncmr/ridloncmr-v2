@@ -12,17 +12,19 @@ export class CommandService {
   outputHistory: string[] = ['Welcome to my site!', "Type 'help' for available commands."];
   currentPath: string[] = []; // Tracks the current directory path
   fileSystem: FileNode[] = CONTENT_DATA;
+  isGlitching: boolean = true;
+  private glitchIntervals: any[] = []; // Stores active intervals to clear them
 
   constructor(public router: Router) {}
 
   executeCommand(input: string) {
     if (!input.trim()) return;
-  
+
     this.outputHistory.push(`> ${input}`);
     const parts = input.trim().split(' ');
     const commandName = parts.shift()?.toLowerCase() || ""; // Convert to lowercase
     const args = parts.map(arg => arg.toLowerCase()); // Convert all args to lowercase
-  
+
     const command = COMMANDS.find(cmd => cmd.name.toLowerCase() === commandName);
     if (command) {
       command.execute(args, this);
@@ -30,7 +32,7 @@ export class CommandService {
       this.outputHistory.push(`Unknown command: ${commandName}`);
     }
   }
-  
+
   getCurrentPath(): string {
     return 'c:\\' + (this.currentPath.length ? this.currentPath.join('\\') : '');
   }
@@ -45,15 +47,15 @@ export class CommandService {
   getAutoCompleteOptions(input: string): string[] {
     const parts = input.trim().split(' ');
     if (parts.length === 0) return []; // No input, no suggestions
-  
+
     const commandName = parts[0].toLowerCase();
     const lastWord = parts.length > 1 ? parts[parts.length - 1].toLowerCase() : '';
-  
+
     const command = COMMANDS.find(cmd => cmd.name.toLowerCase() === commandName);
     if (!command) return []; // Ignore if the command is invalid
-  
+
     const location = this.getCurrentLocation();
-  
+
     // If only the command is typed, suggest all possible options
     if (parts.length === 1) {
       if (command.autoComplete) {
@@ -61,16 +63,33 @@ export class CommandService {
       }
       return [];
     }
-  
+
     // Otherwise, refine the auto-complete based on the last word
     if (command.autoComplete) {
       return command.autoComplete(parts.slice(1), location);
     }
-  
+
     return [];
   }
-  
-  
+
+  disableGlitchEffects() {
+    this.isGlitching = false;
+    this.clearGlitchIntervals();
+  }
+
+  enableGlitchEffects() {
+    this.isGlitching = true;
+  }
+
+  registerGlitchInterval(interval: any) {
+    this.glitchIntervals.push(interval);
+  }
+
+  clearGlitchIntervals() {
+    this.glitchIntervals.forEach(interval => clearInterval(interval));
+    this.glitchIntervals = [];
+  }
+
   getHistory() {
     return this.outputHistory;
   }

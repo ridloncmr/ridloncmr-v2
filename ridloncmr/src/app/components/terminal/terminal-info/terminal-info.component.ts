@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CommandService } from '../../../core/services/command.service';
 
 interface InfoLine {
   label: string;
@@ -21,6 +22,8 @@ export class TerminalInfoComponent implements OnInit {
   systemInfo: InfoLine[] = [];
   isGlitching: boolean = false;
   isBootComplete: boolean = false; // Controls when to wipe the screen
+
+  constructor(private commandService: CommandService) {}
 
   ngOnInit() {
     this.initializeBootSequence();
@@ -75,7 +78,7 @@ export class TerminalInfoComponent implements OnInit {
         }, totalDelay);
       });
 
-    }, 500);
+    }, 1000);
   }
 
   startTypingEffect(info: InfoLine) {

@@ -128,6 +128,27 @@ export const COMMANDS: Command[] = [
     },
   },
   {
+    name: 'glitch',
+    description: 'Toggles glitch effects (on/off)',
+    execute: (args, service: CommandService) => {
+      if (!args.length) {
+        service.outputHistory.push("Usage: glitch <on|off>");
+        return;
+      }
+
+      const option = args[0].toLowerCase();
+      if (option === "off") {
+        service.disableGlitchEffects();
+        service.outputHistory.push("Glitch effects disabled.");
+      } else if (option === "on") {
+        service.enableGlitchEffects();
+        service.outputHistory.push("Glitch effects enabled.");
+      } else {
+        service.outputHistory.push("Invalid option. Use: glitch <on|off>");
+      }
+    }
+  },
+  {
     name: 'cls',
     description: 'Clear Screen',
     execute: (args, service: CommandService) => {

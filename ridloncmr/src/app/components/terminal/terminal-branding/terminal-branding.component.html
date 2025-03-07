@@ -1,5 +1,9 @@
-<div class="branding-box" [class.glitch]="isGlitching">
-  <h1 class="glitch-text" data-text="GLITCHED OUT">GLITCHED OUT</h1>
-  <p class="tagline">[WARNING] SYSTEM CORRUPTION DETECTED.</p>
+<div class="branding-box">
+  <h1 class="glitch-text">
+    <span *ngFor="let letter of glitchedLetters; let i = index" [class.slot-reel]="isGlitching">
+      {{ letter }}
+    </span>
+  </h1>
+  <p class="tagline">Application Architect | Problem Solver | Writer</p>
   <p class="subtext">The system has encountered an unknown anomaly...</p>
 </div>
