@@ -16,7 +16,7 @@ export class ProgramLoaderComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParamMap.subscribe(params => {
-      const exeName = params.get('exe');
+      const exeName = params.get('executable');
 
       switch (exeName) {
         case 'hacker.exe':

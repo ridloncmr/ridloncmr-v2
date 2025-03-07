@@ -188,7 +188,7 @@ export const COMMANDS: Command[] = [
 
       service.outputHistory.push(`Executing ${programName}...`);
       setTimeout(() => {
-        service.router.navigate(['/program'], { queryParams: { exe: programName } });
+        service.router.navigate(['/program'], { queryParams: { executable: programName } });
       }, 500);
     },
     autoComplete: (args, location) => {
