@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./terminal-branding.component.scss']
 })
 export class TerminalBrandingComponent implements OnInit {
-  originalName: string = "ridloncmr";
+  originalName: string = "christian ridlon";
   glitchedLetters: string[] = [];
   isGlitching: boolean = false;
 

@@ -6,14 +6,14 @@
   background: black;
   color: white;
   font-family: 'Lucida Console', Monaco, monospace;
-  border: 2px solid rgba(255, 0, 0, 0.3);
+  border: 2px solid gray; //2px solid rgba(255, 0, 0, 0.3);
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+  //box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
 }
 
 .glitch-text {
@@ -40,7 +40,7 @@
 .tagline {
   font-size: 14px;
   font-weight: bold;
-  color: #f00;
+  color:rgba(255, 0, 0, 1);
 }
 
 .subtext {

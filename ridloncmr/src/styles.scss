@@ -8,4 +8,11 @@ html, body {
     align-items: center;
     justify-content: center;
   }
-  
+
+  .terminal-highlight {
+    outline: 1px solid grey;
+    border-radius: 3px;
+    padding: 3px;
+    background-color: #1E1E1E;
+    color: aqua; //#569CD6;
+  }

@@ -10,7 +10,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class CommandService {
-  outputHistory: SafeHtml[] = ['Welcome to my ridloncmr.com!', "'<b>Christian Ridlon</b>' - Application Architect | Problem Solver | Creator", "Type '<i>gui</i>' to go to User Interface"];
+  outputHistory: SafeHtml[] = ['Welcome to ridloncmr.com!', "Type <span class=\"terminal-highlight\">gui</span> to go to the User Interface"];
   currentPath: string[] = []; // Tracks the current directory path
   fileSystem: FileNode[] = CONTENT_DATA;
   isGlitching: boolean = true;
