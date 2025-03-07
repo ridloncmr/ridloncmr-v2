@@ -193,7 +193,7 @@ export const COMMANDS: Command[] = [
     },
     autoComplete: (args, location) => {
       return location
-        .filter((item) => item.type === 'file' && item.name.endsWith('.exe')) // Suggests only .exe files
+        .filter((item) => item.type === 'executable' && item.name.endsWith('.exe'))
         .map((item) => item.name)
         .filter((name) =>
           args[0] ? name.toLowerCase().startsWith(args[0].toLowerCase()) : true
