@@ -6,15 +6,40 @@ export const COMMANDS: Command[] = [
   {
     name: 'help',
     description: 'Lists available commands',
+    usage: "help",
     execute: (args, service: CommandService) => {
+      let tableHTML = `
+      <table class="terminal-table">
+          <thead>
+              <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                  <th>Usage</th>
+              </tr>
+          </thead>
+          <tbody>`;
+
+      COMMANDS.forEach(cmd => {
+        tableHTML += `
+          <tr>
+              <td>${cmd.name}</td>
+              <td>${cmd.description}</td>
+              <td><code>${cmd.usage}</code></td>
+          </tr>`;
+      });
+
+      tableHTML += `</tbody></table>`;
+
       service.outputHistory.push(
-        'Commands: ' + COMMANDS.map((cmd) => cmd.name).join(', ')
+        service.sanitizer.bypassSecurityTrustHtml(tableHTML)
       );
-    },
-  },
+    }
+  }
+  ,
   {
     name: 'dir',
     description: 'Lists files and directories in the current path',
+    usage: "dir",
     execute: (args, service: CommandService) => {
       const location = service.getCurrentLocation();
 
@@ -104,9 +129,10 @@ export const COMMANDS: Command[] = [
   {
     name: 'cd',
     description: 'Change directory',
+    usage: "cd <i>&lt;&nbsp;folder&nbsp;&gt;</i> || cd ..",
     execute: (args, service: CommandService) => {
       if (!args.length) {
-        service.outputHistory.push('Usage: cd <i>&lt; folder &gt;</i>');
+        service.outputHistory.push('Usage: cd <i>&lt;&nbsp;folder&nbsp;&gt;</i>');
         return;
       }
 
@@ -136,9 +162,10 @@ export const COMMANDS: Command[] = [
   {
     name: 'open',
     description: 'Opens a file',
+    usage: "open <i>&lt;&nbsp;file&nbsp;&gt;</i>",
     execute: (args, service: CommandService) => {
       if (!args.length) {
-        service.outputHistory.push('Usage: open <i>&lt; file &gt;<i>');
+        service.outputHistory.push('Usage: open <i>&lt;&nbsp;file&nbsp;&gt;<i>');
         return;
       }
 
@@ -171,10 +198,11 @@ export const COMMANDS: Command[] = [
   },
   {
     name: 'run',
+    usage: "run <i>&lt;&nbsp;program.exe&nbsp;&gt;</i>",
     description: 'Executes an application or program',
     execute: (args, service: CommandService) => {
       if (!args.length) {
-        service.outputHistory.push('Usage: run <program.exe>');
+        service.outputHistory.push('Usage: run <i>&lt;&nbsp;program.exe&nbsp;&gt;</i>');
         return;
       }
 
@@ -182,8 +210,8 @@ export const COMMANDS: Command[] = [
       const validPrograms = ['hacker.exe'];
 
       if (!validPrograms.includes(programName)) {
-          service.outputHistory.push(`Error: ${programName} not found.`);
-          return;
+        service.outputHistory.push(`Error: ${programName} not found.`);
+        return;
       }
 
       service.outputHistory.push(`Executing ${programName}...`);
@@ -202,6 +230,7 @@ export const COMMANDS: Command[] = [
   },
   {
     name: 'glitch',
+    usage: "glitch on | off",
     description: 'Toggles glitch effects (on/off)',
     execute: (args, service: CommandService) => {
       if (!args.length) {
@@ -223,6 +252,7 @@ export const COMMANDS: Command[] = [
   },
   {
     name: 'cls',
+    usage: "cls",
     description: 'Clear Screen',
     execute: (args, service: CommandService) => {
       service.outputHistory.splice(0, service.outputHistory.length);
@@ -230,6 +260,7 @@ export const COMMANDS: Command[] = [
   },
   {
     name: 'gui',
+    usage: "gui",
     description: 'Switch to GUI mode',
     execute: (args, service: CommandService) => {
       service.router.navigate(['/gui']);
@@ -237,6 +268,7 @@ export const COMMANDS: Command[] = [
   },
   {
     name: 'terminal',
+    usage: "terminal",
     description: 'Switch to Terminal mode',
     execute: (args, service: CommandService) => {
       service.router.navigate(['/terminal']);
