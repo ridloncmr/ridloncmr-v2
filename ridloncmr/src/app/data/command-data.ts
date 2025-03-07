@@ -96,7 +96,7 @@ export const COMMANDS: Command[] = [
       // Store output with proper formatting
       service.outputHistory.push(
         service.sanitizer.bypassSecurityTrustHtml(
-          `<pre style="font-family: 'Lucida Console', Monaco, monospace;">${output.trim()}</pre>`
+          `<pre>${output.trim()}</pre>`
         )
       );
     },
