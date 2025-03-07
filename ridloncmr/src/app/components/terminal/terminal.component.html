@@ -3,7 +3,7 @@
   <div class="terminal" #terminal [class.glitch]="isGlitching" (click)="focusInput()">
     <app-terminal-info></app-terminal-info> <!-- Adds system branding inside the terminal -->
       <div class="terminal-body">
-          <div *ngFor="let line of outputHistory" class="output">{{ line }}</div>
+        <div *ngFor="let line of outputHistory" class="output" [innerHTML]="line"></div>
 
           <div class="input-line">
             <span class="prompt">{{ prompt }}</span>

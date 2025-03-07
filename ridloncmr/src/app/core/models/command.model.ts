@@ -4,4 +4,3 @@ export interface Command {
     execute: (args: string[], service: any) => void;
     autoComplete?: (args: string[], location: any[]) => string[];
   }
-  

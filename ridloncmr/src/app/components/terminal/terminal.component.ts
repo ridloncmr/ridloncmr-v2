@@ -4,13 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { CommandService } from '../../core/services/command.service';
 import { TerminalBrandingComponent } from './terminal-branding/terminal-branding.component';
 import { TerminalInfoComponent } from './terminal-info/terminal-info.component';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
   selector: 'app-terminal',
-  imports: [CommonModule, FormsModule, TerminalBrandingComponent, TerminalInfoComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    TerminalBrandingComponent,
+    TerminalInfoComponent,
+  ],
   templateUrl: './terminal.component.html',
-  styleUrls: ['./terminal.component.scss']
+  styleUrls: ['./terminal.component.scss'],
 })
 export class TerminalComponent implements AfterViewInit {
   @ViewChild('terminalInput') terminalInput!: ElementRef;
@@ -18,12 +24,16 @@ export class TerminalComponent implements AfterViewInit {
 
   isGlitching: boolean = false;
   commandInput: string = '';
-  outputHistory: string[] = [];
+  outputHistory: SafeHtml[] = [];
   suggestions: string[] = [];
   suggestionIndex: number = -1;
   inlineSuggestion: string = '';
 
-  constructor(private commandService: CommandService, private cdr: ChangeDetectorRef) { }
+  constructor(
+    private commandService: CommandService,
+    private cdr: ChangeDetectorRef,
+    private sanitizer: DomSanitizer
+  ) {}
 
   get prompt(): string {
     return this.commandService.getCurrentPath() + '>';
@@ -69,7 +79,15 @@ export class TerminalComponent implements AfterViewInit {
 
   handleCommand() {
     if (this.commandInput.trim()) {
-      this.outputHistory.push(`${this.prompt} ${this.commandInput}`);
+      let formattedCommand = this.commandInput
+        .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>') // Bold
+        .replace(/\*(.*?)\*/g, '<i>$1</i>'); // Italic
+
+      this.outputHistory.push(
+        this.sanitizer.bypassSecurityTrustHtml(
+          `${this.prompt} ${formattedCommand}`
+        )
+      );
       this.commandService.executeCommand(this.commandInput);
       this.commandInput = '';
       this.clearSuggestions();
@@ -85,7 +103,9 @@ export class TerminalComponent implements AfterViewInit {
     const parts = this.commandInput.trim().split(' ');
     const lastWord = parts.length > 1 ? parts[parts.length - 1] : '';
 
-    const newSuggestions = this.commandService.getAutoCompleteOptions(this.commandInput.trim());
+    const newSuggestions = this.commandService.getAutoCompleteOptions(
+      this.commandInput.trim()
+    );
 
     // Reset suggestion index **only if the suggestions change**
     if (JSON.stringify(newSuggestions) !== JSON.stringify(this.suggestions)) {
@@ -95,12 +115,14 @@ export class TerminalComponent implements AfterViewInit {
     this.suggestions = newSuggestions;
 
     // Ensure inline suggestion updates correctly
-    this.inlineSuggestion = this.suggestions.length > 0 ? ` ${this.suggestions[0].slice(lastWord.length)}` : '';
+    this.inlineSuggestion =
+      this.suggestions.length > 0
+        ? ` ${this.suggestions[0].slice(lastWord.length)}`
+        : '';
 
     this.cdr.detectChanges(); // has to before adjustSuggestionPosition
     this.adjustSuggestionPosition();
   }
-
 
   applyOrCycleSuggestion() {
     if (this.suggestions.length === 0) return;
@@ -118,7 +140,8 @@ export class TerminalComponent implements AfterViewInit {
       this.suggestionIndex = 1;
     } else {
       // Cycle to the next suggestion
-      this.suggestionIndex = (this.suggestionIndex + 1) % this.suggestions.length;
+      this.suggestionIndex =
+        (this.suggestionIndex + 1) % this.suggestions.length;
     }
 
     const suggestion = this.suggestions[this.suggestionIndex];
@@ -130,16 +153,18 @@ export class TerminalComponent implements AfterViewInit {
 
   applySuggestion() {
     if (this.inlineSuggestion) {
-        if (!this.commandInput.endsWith(' ') && !this.commandInput.includes(' ')) {
-            this.commandInput += ' ' + this.inlineSuggestion.trimStart();
-        } else {
-            this.commandInput += this.inlineSuggestion.trimStart();
-        }
+      if (
+        !this.commandInput.endsWith(' ') &&
+        !this.commandInput.includes(' ')
+      ) {
+        this.commandInput += ' ' + this.inlineSuggestion.trimStart();
+      } else {
+        this.commandInput += this.inlineSuggestion.trimStart();
+      }
 
-        this.clearSuggestions();
+      this.clearSuggestions();
     }
-}
-
+  }
 
   adjustSuggestionPosition() {
     if (!this.terminalInput || !this.suggestionElement) return;

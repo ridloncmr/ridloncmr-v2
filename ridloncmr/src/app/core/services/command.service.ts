@@ -3,19 +3,20 @@ import { Router } from '@angular/router';
 import { FileNode } from '../models/file-node.model';
 import { CONTENT_DATA } from '../../data/content-data';
 import { COMMANDS } from '../../data/command-data';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommandService {
-  outputHistory: string[] = ['Welcome to my site!', "Type 'help' for available commands."];
+  outputHistory: SafeHtml[] = ['Welcome to my ridloncmr.com!', "'<b>Christian Ridlon</b>' - Application Architect | Problem Solver | Creator", "Type '<i>gui</i>' to go to User Interface"];
   currentPath: string[] = []; // Tracks the current directory path
   fileSystem: FileNode[] = CONTENT_DATA;
   isGlitching: boolean = true;
   private glitchIntervals: any[] = []; // Stores active intervals to clear them
 
-  constructor(public router: Router) {}
+  constructor(public router: Router, public sanitizer: DomSanitizer) {}
 
   executeCommand(input: string) {
     if (!input.trim()) return;

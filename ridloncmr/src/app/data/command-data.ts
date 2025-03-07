@@ -20,43 +20,85 @@ export const COMMANDS: Command[] = [
 
       const getRandomDate = () => {
         const now = new Date();
-        const past = new Date(now.getFullYear() - Math.floor(Math.random() * 5), Math.random() * 12, Math.random() * 28);
-        return past.toLocaleDateString('en-US') + ' ' + past.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+        const past = new Date(
+          now.getFullYear() - Math.floor(Math.random() * 5),
+          Math.random() * 12,
+          Math.random() * 28
+        );
+        return (
+          past.toLocaleDateString('en-US') +
+          ' ' +
+          past.toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true,
+          })
+        );
       };
 
       const formatSize = (size: number) => size.toLocaleString(); // Format file sizes like CMD
 
-      // 🔥 Ensure alignment by defining column widths
+      // Column width settings
       const DATE_WIDTH = 22;
-      const DIR_WIDTH = 10;
+      const TYPE_WIDTH = 10;
       const SIZE_WIDTH = 15;
-      const NAME_WIDTH = 25; // Adjust as needed
+      const NAME_WIDTH = 25;
 
-      // Function to pad values for alignment
+      // Padding functions for alignment
       const padRight = (text: string, width: number) => text.padEnd(width, ' ');
-      const padLeft = (text: string, width: number) => text.padStart(width, ' ');
+      const padLeft = (text: string, width: number) =>
+        text.padStart(width, ' ');
 
       let output = '';
 
-      // Header with a horizontal rule
-      output += `Date Modified${' '.repeat(DATE_WIDTH - 12)} Type       Size${' '.repeat(SIZE_WIDTH - 4)} Name\n`;
-      output += `------------------------------------------------------------\n`;
+      // Header with fixed spacing
+      output += `${padRight('Date Modified', DATE_WIDTH)} ${padRight(
+        'Type',
+        TYPE_WIDTH
+      )} ${padLeft('Size', SIZE_WIDTH)} ${padRight('Name', NAME_WIDTH)}\n`;
+      output += `${'-'.repeat(
+        DATE_WIDTH + TYPE_WIDTH + SIZE_WIDTH + NAME_WIDTH + 3
+      )}\n`;
 
-      // Always show `.` and `..` for navigation
-      output += `${padRight(getRandomDate(), DATE_WIDTH)} ${padRight('<DIR>', DIR_WIDTH)} ${''.padStart(SIZE_WIDTH, ' ')} ${padRight('.', NAME_WIDTH)}\n`;
-      output += `${padRight(getRandomDate(), DATE_WIDTH)} ${padRight('<DIR>', DIR_WIDTH)} ${''.padStart(SIZE_WIDTH, ' ')} ${padRight('..', NAME_WIDTH)}\n`;
+      // Always show `.` and `..`
+      output += `${padRight(getRandomDate(), DATE_WIDTH)} ${padRight(
+        '&lt;DIR&gt;',
+        TYPE_WIDTH
+      )} ${''.padStart(SIZE_WIDTH, ' ')} ${padRight('.', NAME_WIDTH)}\n`;
+      output += `${padRight(getRandomDate(), DATE_WIDTH)} ${padRight(
+        '&lt;DIR&gt;',
+        TYPE_WIDTH
+      )} ${''.padStart(SIZE_WIDTH, ' ')} ${padRight('..', NAME_WIDTH)}\n`;
 
-      location.forEach(item => {
+      // Iterate over directories and files
+      location.forEach((item) => {
         const date = getRandomDate();
         if (item.type === 'directory') {
-          output += `${padRight(date, DATE_WIDTH)} ${padRight('<DIR>', DIR_WIDTH)} ${''.padStart(SIZE_WIDTH, ' ')} ${padRight(item.name, NAME_WIDTH)}\n`;
+          output += `${padRight(date, DATE_WIDTH)} ${padRight(
+            '&lt;DIR&gt;',
+            TYPE_WIDTH
+          )} ${''.padStart(SIZE_WIDTH, ' ')} ${padRight(
+            item.name,
+            NAME_WIDTH
+          )}\n`;
         } else {
           const fileSize = Math.floor(Math.random() * 500000) + 1000; // Fake file sizes
-          output += `${padRight(date, DATE_WIDTH)} ${''.padStart(DIR_WIDTH, ' ')} ${padLeft(formatSize(fileSize), SIZE_WIDTH)} ${padRight(item.name, NAME_WIDTH)}\n`;
+          output += `${padRight(date, DATE_WIDTH)} ${''.padStart(
+            TYPE_WIDTH,
+            ' '
+          )} ${padLeft(formatSize(fileSize), SIZE_WIDTH)} ${padRight(
+            item.name,
+            NAME_WIDTH
+          )}\n`;
         }
       });
 
-      service.outputHistory.push(output.trim());
+      // Store output with proper formatting
+      service.outputHistory.push(
+        service.sanitizer.bypassSecurityTrustHtml(
+          `<pre style="font-family: 'Lucida Console', Monaco, monospace;">${output.trim()}</pre>`
+        )
+      );
     },
   },
   {
@@ -132,21 +174,21 @@ export const COMMANDS: Command[] = [
     description: 'Toggles glitch effects (on/off)',
     execute: (args, service: CommandService) => {
       if (!args.length) {
-        service.outputHistory.push("Usage: glitch <on|off>");
+        service.outputHistory.push('Usage: glitch <on|off>');
         return;
       }
 
       const option = args[0].toLowerCase();
-      if (option === "off") {
+      if (option === 'off') {
         service.disableGlitchEffects();
-        service.outputHistory.push("Glitch effects disabled.");
-      } else if (option === "on") {
+        service.outputHistory.push('Glitch effects disabled.');
+      } else if (option === 'on') {
         service.enableGlitchEffects();
-        service.outputHistory.push("Glitch effects enabled.");
+        service.outputHistory.push('Glitch effects enabled.');
       } else {
-        service.outputHistory.push("Invalid option. Use: glitch <on|off>");
+        service.outputHistory.push('Invalid option. Use: glitch <on|off>');
       }
-    }
+    },
   },
   {
     name: 'cls',
