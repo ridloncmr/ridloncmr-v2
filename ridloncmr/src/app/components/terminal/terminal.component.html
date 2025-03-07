@@ -1,26 +1,27 @@
-<app-terminal-branding></app-terminal-branding>
-<div class="terminal" #terminal [class.glitch]="isGlitching" (click)="focusInput()">
-  <app-terminal-info></app-terminal-info> <!-- Adds system branding inside the terminal -->
-    <div class="terminal-body">
-        <div *ngFor="let line of outputHistory" class="output">{{ line }}</div>
+<div class="terminal-container">
+  <app-terminal-branding></app-terminal-branding>
+  <div class="terminal" #terminal [class.glitch]="isGlitching" (click)="focusInput()">
+    <app-terminal-info></app-terminal-info> <!-- Adds system branding inside the terminal -->
+      <div class="terminal-body">
+          <div *ngFor="let line of outputHistory" class="output">{{ line }}</div>
 
-        <div class="input-line">
-          <span class="prompt">{{ prompt }}</span>
+          <div class="input-line">
+            <span class="prompt">{{ prompt }}</span>
 
-          <div class="input-container">
-            <input
-              #terminalInput
-              type="text"
-              [(ngModel)]="commandInput"
-              (input)="handleInput()"
-              (keyup.enter)="handleCommand()"
-              autofocus
-            />
-            <span #suggestionElement *ngIf="inlineSuggestion" class="suggestion-inline">
-              {{ inlineSuggestion }}
-            </span>
+            <div class="input-container">
+              <input
+                #terminalInput
+                type="text"
+                [(ngModel)]="commandInput"
+                (input)="handleInput()"
+                (keyup.enter)="handleCommand()"
+                autofocus
+              />
+              <span #suggestionElement *ngIf="inlineSuggestion" class="suggestion-inline">
+                {{ inlineSuggestion }}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-
+  </div>
 </div>
