@@ -20,7 +20,7 @@ export class HackerProgramComponent extends BaseProgramComponent implements OnIn
   typingSpeed = 50;
   activeFakeCode: string = "";
   currentIndex: number = 0;
-  isTyping: boolean = false; // Prevents multiple snippets from starting at once
+  isTyping: boolean = false;
 
   constructor(private cdr: ChangeDetectorRef, protected override router: Router) {
     super(router);
@@ -50,9 +50,8 @@ export class HackerProgramComponent extends BaseProgramComponent implements OnIn
 
   typeCharacter() {
     if (!this.isTyping) {
-      // ✅ Fake code now only appears when the user actually starts typing
       this.activeFakeCode = FakeCodeSnippets[Math.floor(Math.random() * FakeCodeSnippets.length)];
-      this.output.push(""); // Create a new empty line for typing effect
+      this.output.push("");
       this.currentIndex = 0;
       this.isTyping = true;
       this.cdr.detectChanges();
@@ -77,7 +76,7 @@ export class HackerProgramComponent extends BaseProgramComponent implements OnIn
   startCompilation() {
     this.isCompiling = true;
 
-    this.output.push(""); // Ensure space before compiling
+    this.output.push("");
     this.output.push("[Compiling...]");
     this.cdr.detectChanges();
     this.scrollToBottomSmooth();
@@ -99,10 +98,10 @@ export class HackerProgramComponent extends BaseProgramComponent implements OnIn
           this.output.push("  " + ErrorMessages[Math.floor(Math.random() * ErrorMessages.length)]);
         }
         if (index === HackingProcesses.length - 1) {
-          this.output.push(""); // New line for spacing
+          this.output.push("");
           this.output.push("[Execution Complete. System Compromised.]");
           this.output.push("  " + PasswordDumps[Math.floor(Math.random() * PasswordDumps.length)]);
-          this.output.push(""); // Final blank lineasdfasd
+          this.output.push("");
         }
 
         this.cdr.detectChanges();
@@ -111,7 +110,7 @@ export class HackerProgramComponent extends BaseProgramComponent implements OnIn
       } else {
         clearInterval(interval);
         this.isCompiling = false;
-        this.output.push(""); // Ensure space before compilingadsfasf
+        this.output.push("");
         this.showCursor();
       }
     }, this.typingSpeed * 5);

@@ -1,20 +1,11 @@
 export const FakeCodeSnippets: string[] = [
-    // Python Exploit
     `import socket\ns = socket.socket()\ns.connect(("target.com", 22))\nprint("Exploiting SSH vulnerability...")`,
-  
-    // JavaScript Payload
     `const exploit = "<script>alert('Hacked!')</script>";\ndocument.body.innerHTML = exploit;`,
-  
-    // Bash Attack
     `#!/bin/bash\necho "Scanning target network..."\nnmap -p 22,80,443 -A example.com`,
-  
-    // SQL Injection
     `SELECT * FROM users WHERE username='admin' AND password='' OR '1'='1'; --`,
-  
-    // Assembly Payload
     `section .text\nglobal _start\n_start:\n  mov eax, 1\n  mov ebx, 0\n  int 0x80`
   ];
-  
+
   export const HackingProcesses: string[] = [
     "Initializing backdoor connection...",
     "Spoofing MAC address...",
@@ -27,7 +18,7 @@ export const FakeCodeSnippets: string[] = [
     "Escalating privileges...",
     "System access granted. Deploying payload..."
   ];
-  
+
   // Fake IP Scanning
   export const IpScanResults: string[] = [
     "192.168.1.1 - Open Ports: 22, 80, 443",
@@ -36,7 +27,7 @@ export const FakeCodeSnippets: string[] = [
     "10.0.0.5 - Detected Remote Desktop Protocol (RDP)",
     "172.16.0.2 - Weak SSH Authentication Found"
   ];
-  
+
   // Brute-force Attempts
   export const BruteForceAttempts: string[] = [
     "Attempting password: hunter2",
@@ -45,7 +36,7 @@ export const FakeCodeSnippets: string[] = [
     "Attempting password: letmein",
     "Attempting password: admin"
   ];
-  
+
   // Fake Password Dumps
   export const PasswordDumps: string[] = [
     "[root] => password: 1qaz@WSX",
@@ -53,7 +44,7 @@ export const FakeCodeSnippets: string[] = [
     "[user] => password: abc1234",
     "[sysadmin] => password: welcome1"
   ];
-  
+
   // Fake Error Messages
   export const ErrorMessages: string[] = [
     "ERROR: Connection lost. Retrying...",
@@ -62,4 +53,3 @@ export const FakeCodeSnippets: string[] = [
     "Segmentation fault (core dumped)",
     "Kernel panic - not syncing: Fatal exception"
   ];
-  

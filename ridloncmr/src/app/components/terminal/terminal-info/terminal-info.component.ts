@@ -5,7 +5,7 @@ import { CommandService } from '../../../core/services/command.service';
 interface InfoLine {
   label: string;
   value: string;
-  displayedValue: string; // What is currently shown as it's typed
+  displayedValue: string;
   isTyping: boolean;
   delay: number;
 }
@@ -21,7 +21,7 @@ export class TerminalInfoComponent implements OnInit {
   bootLines: { text: string; isVisible: boolean; delay: number }[] = [];
   systemInfo: InfoLine[] = [];
   isGlitching: boolean = false;
-  isBootComplete: boolean = false; // Controls when to wipe the screen
+  isBootComplete: boolean = false;
   isCollapsed: boolean = false;
   typingIntervals: any[] = [];
 

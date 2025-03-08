@@ -23,8 +23,8 @@ export class CommandService {
 
     this.outputHistory.push(`> ${input}`);
     const parts = input.trim().split(' ');
-    const commandName = parts.shift()?.toLowerCase() || ""; // Convert to lowercase
-    const args = parts.map(arg => arg.toLowerCase()); // Convert all args to lowercase
+    const commandName = parts.shift()?.toLowerCase() || "";
+    const args = parts.map(arg => arg.toLowerCase());
 
     const command = COMMANDS.find(cmd => cmd.name.toLowerCase() === commandName);
     if (command) {

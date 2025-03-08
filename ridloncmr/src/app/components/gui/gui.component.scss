@@ -3,29 +3,27 @@
   flex-direction: column;
   height: 100vh;
   width: 100%;
-  overflow: hidden; /* Prevents body scrolling */
+  overflow: hidden;
 }
 
 app-header {
-  flex-shrink: 0; /* Ensures the header does not grow */
+  flex-shrink: 0;
 }
 
-/* The container that will have the scrollbar */
 .gui-container {
-  flex: 1; /* Takes the remaining space */
-  overflow-y: auto; /* Enables scrolling inside the container */
+  flex: 1;
+  overflow-y: auto;
   width: 100%;
   margin-top: 70px;
 }
 
-/* Ensure parallax sections fill the viewport */
 .parallax {
   // height: calc(100vh);
-  min-height: calc(100vh - 302px);
+  //min-height: calc(100vh - 302px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align content to the top */
-  justify-content: flex-start; /* Start content from top */
+  align-items: flex-start;
+  justify-content: flex-start;
   text-align: center;
   color: white;
   background-attachment: fixed;
@@ -34,13 +32,11 @@ app-header {
   background-size: cover;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding-top: 2rem; /* Adjust as needed */
+  padding-top: 2rem;
 }
 
-/* Background images */
 .parallax1 {
   background-image: url("../../../assets/images/cmr-water2.jpg");
-
 }
 
 .parallax2 {
@@ -56,7 +52,6 @@ app-header {
   background-image: url("../../../assets/images/VMM_Backdrop_2.png");
 }
 
-/* Ensure cards start from the top */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -64,15 +59,13 @@ app-header {
   justify-content: center;
   max-width: 1200px;
   width: 100%;
-  padding-top: 0; /* Remove any extra top padding */
-  margin-top: 0; /* Ensure no extra margin */
+  padding-top: 0;
+  margin-top: 0;
   padding-bottom: 35px;
 }
 
-/* Individual cards */
 .card {
   flex: 1 1 300px;
-  // max-width: 400px;
   width: 90%;
   padding: 1.5rem;
   border: 1px solid #ccc;
@@ -82,7 +75,6 @@ app-header {
   text-align: center;
 }
 
-/* Responsive Adjustments */
 @media only screen and (max-width: 768px) {
   .card-container {
     flex-direction: column;

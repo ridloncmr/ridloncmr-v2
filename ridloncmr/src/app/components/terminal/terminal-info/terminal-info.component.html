@@ -17,8 +17,8 @@
       <p *ngFor="let info of systemInfo">
         <span class="system-label">{{ info.label }}</span>
         <span class="typing-text">{{ info.displayedValue }}</span>
-        <span *ngIf="info.isTyping" class="cursor">█</span>
         <!-- Simulated cursor -->
+        <span *ngIf="info.isTyping" class="cursor">█</span>
       </p>
     </ng-container>
   </div>

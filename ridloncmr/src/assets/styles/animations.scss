@@ -6,7 +6,7 @@
 }
 
 // Subtle glitch for branding elements
-@keyframes subtle-glitch {
+@keyframes glitch-effect-red {
   0% { text-shadow: 2px 2px red, -2px -2px white; }
   50% { text-shadow: -2px -2px red, 2px 2px white; }
   100% { text-shadow: 2px 2px red, -2px -2px white; }

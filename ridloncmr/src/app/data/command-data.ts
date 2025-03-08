@@ -61,9 +61,9 @@ export const COMMANDS: Command[] = [
         );
       };
 
-      const formatSize = (size: number) => size.toLocaleString(); // Format file sizes like CMD
+      const formatSize = (size: number) => size.toLocaleString();
 
-      // Column width settings
+      // Column widths
       const DATE_WIDTH = 22;
       const TYPE_WIDTH = 10;
       const SIZE_WIDTH = 15;
@@ -136,7 +136,7 @@ export const COMMANDS: Command[] = [
         return;
       }
 
-      const folder = args[0].toLowerCase(); // Convert input to lowercase
+      const folder = args[0].toLowerCase();
       const location = service.getCurrentLocation();
       const folderNode = location.find(
         (item) => item.id.toLowerCase() === folder && item.type === 'directory'
@@ -145,7 +145,7 @@ export const COMMANDS: Command[] = [
       if (folder === '..') {
         if (service.currentPath.length > 0) service.currentPath.pop();
       } else if (folderNode) {
-        service.currentPath.push(folderNode.id); // Use original casing
+        service.currentPath.push(folderNode.id);
       } else {
         service.outputHistory.push(`No such directory: ${folder}`);
       }

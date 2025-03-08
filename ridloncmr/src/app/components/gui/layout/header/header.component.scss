@@ -7,7 +7,6 @@
   z-index: 1000;
   background-image: url("../../../../../assets/images/VMM_Backdrop_2.png");
   background-size: 25%;
-  // height: 75px;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -49,7 +48,6 @@
     content: attr(data-replace);
     height: 100%;
     top: 0;
-    // transform-origin: 100% 50%;
     transform-origin: 100%;
     transform: translate3d(200%, 0, 0);
     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
