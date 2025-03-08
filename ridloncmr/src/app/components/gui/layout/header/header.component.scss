@@ -1,0 +1,79 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background-image: url("../../../../../assets/images/VMM_Backdrop_2.png");
+  background-size: 25%;
+  // height: 75px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  .header-img {
+    width: 50px;
+    padding: 0 5px;
+  }
+
+  .header-item {
+    margin-left: 15px;
+    background-color: #282928;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: #fff;
+  }
+
+  .header-item::before,
+  .header-item::after {
+   content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  .header-item::before {
+    background-color: #ff4081;
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .header-item::after {
+    content: attr(data-replace);
+    height: 100%;
+    top: 0;
+    // transform-origin: 100% 50%;
+    transform-origin: 100%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+    color: #ff4081;
+  }
+
+  .header-item:not(.active-link):hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+  }
+  .header-item:not(.active-link):hover::after {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .header-item span {
+    display: inline-block;
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+
+  .header-item:not(.active-link):hover span {
+    transform: translate3d(-200%, 0, 0);
+  }
+}
+
+.active-link {
+  color: #ff4081 !important;
+}

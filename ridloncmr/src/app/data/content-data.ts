@@ -1,4 +1,5 @@
 import { FileNode } from "../core/models/file-node.model";
+import { Introduction } from "./intro-data/introduction";
 import { BridgeOfDeath } from "./stories/bridge-of-death";
 import { GlitchedOut } from "./stories/glitched-out";
 import { HungerThatRemains } from "./stories/hunger-that-remains";
@@ -8,11 +9,8 @@ import { VanishingPoint } from "./stories/vanishing-point";
 
 export const CONTENT_DATA: FileNode[] = [
   new FileNode('welcome', 'Welcome', 'directory', undefined, false, [
-    new FileNode('introduction', 'Introduction.txt', 'file', "Welcome to my personal site! You can explore sections using `cd` and `dir` commands."),
+    new FileNode('introduction', 'Introduction.txt', 'file', Introduction),
     new FileNode('hacker-program', 'hacker.exe', 'executable', undefined)
-  ]),
-  new FileNode('welcome2', 'Welcome2', 'directory', undefined, false, [
-    new FileNode('introduction', 'Introduction.txt', 'file', "Welcome to my personal site! You can explore sections using `cd` and `dir` commands.")
   ]),
   new FileNode('stories', 'Stories', 'directory', undefined, false, [
     new FileNode('GlitchVerse', 'GlitchVerse', 'directory', undefined, false, [
@@ -28,8 +26,8 @@ export const CONTENT_DATA: FileNode[] = [
     new FileNode('arg', 'ARG.txt', 'file', "Developing an interactive horror ARG experience built around the GlitchedOut universe.")
   ]),
   new FileNode('contact', 'Contact', 'directory', undefined, false, [
-    new FileNode('linkedin', 'LinkedIn.url', 'file', "https://linkedin.com", true),
-    new FileNode('github', 'GitHub.url', 'file', "https://github.com", true),
-    new FileNode('email', 'Email.txt', 'file', "You can reach me at me@example.com.")
+    new FileNode('linkedin', 'LinkedIn.url', 'file', "www.linkedin.com/in/christian-ridlon-05507312b", true),
+    new FileNode('github', 'GitHub.url', 'file', "https://github.com/ridloncmr", true),
+    new FileNode('email', 'Email.txt', 'file', "ridloncmr@gmail.com")
   ])
 ];
