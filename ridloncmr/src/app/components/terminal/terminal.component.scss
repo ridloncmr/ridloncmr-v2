@@ -11,8 +11,8 @@
   width: 1200px;
   height: calc(90vh - 120px);
   background-color: black;
-  color: white;
-  font-family: 'Lucida Console', Monaco, monospace;
+  color: var(--white);
+  font-family: var(--hacker-font-family);
   border: 2px solid gray;
   padding: 10px;
   display: flex;
@@ -24,7 +24,6 @@
   flex-grow: 1;
   padding: 5px;
   overflow-y: auto;
-  font-family: 'Lucida Console', Monaco, monospace;
   scrollbar-width: none;  /* Firefox */
   -ms-overflow-style: none;  /* IE/Edge */
 }
@@ -40,7 +39,7 @@
     .terminal-container {
       width: 95vw;
     }
-  
+
     .terminal {
       width: 90vw;
     }

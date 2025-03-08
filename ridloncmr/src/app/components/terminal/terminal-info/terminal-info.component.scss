@@ -1,10 +1,10 @@
 @import "../../../../assets/styles/animations.scss";
 
 .info-container {
-  font-family: "Lucida Console", Monaco, monospace;
-  color: lightgray;
+  font-family: var(--hacker-font-family);
+  color: var(--lightgray);
   padding: 10px;
-  border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+  border-bottom: 1px solid var(--dark-red);
   margin-bottom: 10px;
   font-size: 14px;
   height: 160px;
@@ -53,7 +53,7 @@
   }
 
   .system-label {
-    color: #0f0;
+    color: var(--hacker-green);
     font-weight: bold;
   }
 
@@ -65,7 +65,7 @@
   .cursor {
     display: inline-block;
     font-weight: bold;
-    color: #0f0;
+    color: var(--hacker-green);
     animation: blink 0.8s infinite;
   }
 
@@ -78,7 +78,7 @@
     padding: 5px;
 
     .collapsed-line {
-      animation: slideUp 0.3s ease-in-out forwards;
+      animation: scrollUp 0.3s ease-in-out forwards;
     }
   }
 }

@@ -1,39 +1,39 @@
 .terminal-highlight {
-  outline: 1px solid grey;
+  outline: 1px solid var(--gray);
   border-radius: 3px;
   padding: 3px;
-  background-color: #1e1e1e;
-  color: aqua; //#569CD6;
+  background-color: var(inkwell-black);
+  color: var(--hacker-pink)
 }
 
 .terminal-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: "Lucida Console", Monaco, monospace;
-  background: black;
-  color: lightgray;
+  font-family: var(--hacker-font-family);
+  background: var(--black);
+  color: var(--lightgray);
 }
 
 .terminal-table th,
 .terminal-table td {
-  border: 1px solid gray;
+  border: 1px solid var(--gray);
   padding: 5px 10px;
   text-align: left;
 }
 
 .terminal-table th {
-  background: #222;
-  color: #0f0;
+  background: var(--off-black);
+  color: var(--hacker-green);
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .terminal-table tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--semi-tran-black);
 }
 
 .terminal-table tr:hover {
-  background: rgba(0, 255, 0, 0.1);
+  background: var(--dark-green);
   transition: background 0.2s ease-in-out;
 }
 

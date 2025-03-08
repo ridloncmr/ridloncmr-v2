@@ -1,8 +1,39 @@
-@import './assets/styles/terminal.scss';
+@import "./assets/styles/terminal.scss";
 
-html, body {
-    background-color: black;
-    color: white;
-    font-family: 'Lucida Console', Monaco, monospace;
-    margin: 0;
-  }
+:root {
+  --hacker-font-family: "Lucida Console", Monaco, monospace;
+
+  // colors
+  --white: #fff;
+
+  --gray: gray;
+  --lightgray: lightgrey;
+  --semi-tran-gray: rgba(255, 255, 255, 0.5);
+
+  --red: red;
+  --dark-red: rgba(255, 0, 0, 0.2);
+
+  --dark-green: rgba(0, 255, 0, 0.1);
+
+  --black: #000;
+  --inkwell-black: #1e1e1e
+  --off-black: #222;
+  --semi-tran-black: rgba(255, 255, 255, 0.05);
+
+  --hacker-green: #0f0;
+  --hacker-blue: aqua;
+  --hacker-pink: #ff4081;;
+}
+
+@mixin flex-vh-center {
+  display: flex;
+
+}
+
+html,
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--hacker-font-family);
+  margin: 0;
+}
