@@ -2,7 +2,7 @@
   outline: 1px solid var(--gray);
   border-radius: 3px;
   padding: 3px;
-  background-color: var(inkwell-black);
+  background-color: var(--header-black);
   color: var(--hacker-blue)
 }
 
@@ -22,7 +22,7 @@
 }
 
 .terminal-table th {
-  background: var(--off-black);
+  background: var(--header-black);
   color: var(--hacker-blue);
   font-weight: bold;
   text-transform: uppercase;

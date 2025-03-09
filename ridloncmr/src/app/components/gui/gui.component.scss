@@ -47,3 +47,21 @@ app-header {
     max-width: 90%;
   }
 }
+
+@media (max-width: 800px) {
+  .gui-container {
+    margin-top: 56px;
+  }
+}
+
+@media (max-width: 500px) {
+  .gui-container {
+    margin-top: 49px;
+  }
+}
+
+@media (max-width: 300px) {
+  .gui-container {
+    margin-top: 28px;
+  }
+}

@@ -36,7 +36,7 @@
 
 
 @mixin parallax($min-height: 100vh) {
-  min-height: calc($min-height - 252px);
+  min-height: calc($min-height - 227px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -49,6 +49,16 @@
   background-size: cover;
   position: relative;
   padding-top: 2rem;
-  // height: calc(100vh);
-  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  @media (max-width: 800px) {
+    min-height: calc($min-height - 188px);
+  }
+
+  @media (max-width: 500px) {
+    min-height: calc($min-height - 169px);
+  }
+
+  @media (max-width: 300px) {
+    min-height: calc($min-height - 110px);
+  }
 }
