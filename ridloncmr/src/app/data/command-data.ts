@@ -263,15 +263,7 @@ export const COMMANDS: Command[] = [
     usage: "gui",
     description: 'Switch to GUI mode',
     execute: (args, service: CommandService) => {
-      service.router.navigate(['/gui']);
-    },
-  },
-  {
-    name: 'terminal',
-    usage: "terminal",
-    description: 'Switch to Terminal mode',
-    execute: (args, service: CommandService) => {
-      service.router.navigate(['/terminal']);
+      service.router.navigate(['ridloncmr']);
     },
   },
 ];

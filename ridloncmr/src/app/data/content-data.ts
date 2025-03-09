@@ -8,7 +8,7 @@ import { VanishingPoint } from "./stories/vanishing-point";
 
 
 export const CONTENT_DATA: FileNode[] = [
-  new FileNode('welcome', 'Welcome', 'directory', undefined, false, [
+  new FileNode('ridloncmr', 'Ridloncmr', 'directory', undefined, false, [
     new FileNode('introduction', 'Introduction.txt', 'file', Introduction),
     new FileNode('hacker-program', 'hacker.exe', 'executable', undefined)
   ]),

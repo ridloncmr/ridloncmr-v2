@@ -1,3 +1,6 @@
+@import '../../../assets/styles/mixins.scss';
+
+
 :host {
   display: flex;
   flex-direction: column;
@@ -18,38 +21,8 @@ app-header {
 }
 
 .parallax {
-  // height: calc(100vh);
-  //min-height: calc(100vh - 302px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: center;
-  color: var(--white);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding-top: 2rem;
-}
-
-.parallax1 {
-  background-image: url("../../../assets/images/cmr-water2.jpg");
-}
-
-.parallax2 {
+  @include parallax;
   background-image: url("../../../assets/images/VMM_Backdrop_1.png");
-}
-
-.parallax3 {
-  background-image: url("../../../assets/images/VMM_Backdrop_4.png");
-  max-height: 175px;
-}
-
-.parallax4 {
-  background-image: url("../../../assets/images/VMM_Backdrop_2.png");
 }
 
 .card-container {
@@ -62,17 +35,6 @@ app-header {
   padding-top: 0;
   margin-top: 0;
   padding-bottom: 35px;
-}
-
-.card {
-  flex: 1 1 300px;
-  width: 90%;
-  padding: 1.5rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
-  text-align: center;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,6 +1,11 @@
 <header class="header" color="primary">
   <img class="header-img" src="../assets/images/VMM.png">
-  <div class="header-item" routerLink="/home" routerLinkActive="active-link" data-replace="Ridloncmr"><span>Ridloncmr</span></div>
-  <div class="header-item" routerLink="/game-prices" routerLinkActive="active-link" data-replace="Game Prices"><span>Game Prices</span></div>
-  <div class="header-item" routerLink="/blog" routerLinkActive="active-link" data-replace="Blog"><span>Blog</span></div>
+  <ng-container *ngFor="let route of routes">
+    <div class="header-item"
+         [routerLink]="['/', route.id]"
+         routerLinkActive="active-link"
+         [attr.data-replace]="route.name">
+      <span>{{ route.name }}</span>
+    </div>
+  </ng-container>
 </header>

@@ -4,11 +4,12 @@ import { FileNode } from '../../core/models/file-node.model';
 import { ContentService } from '../../core/services/content.service';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from "./layout/footer/footer.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-gui',
-  imports: [CommonModule, HeaderComponent, FooterComponent],
+  imports: [CommonModule, RouterModule, HeaderComponent, FooterComponent],
   templateUrl: './gui.component.html',
   styleUrls: ['./gui.component.scss']
 })

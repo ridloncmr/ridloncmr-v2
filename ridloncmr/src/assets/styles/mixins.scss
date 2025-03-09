@@ -28,3 +28,22 @@
   font-family: var(--hacker-font-family);
   color: $color;
 }
+
+
+@mixin parallax($min-height: 100vh) {
+  min-height: calc($min-height - 302px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  color: var(--white);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 2rem;
+  // height: calc(100vh);
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
