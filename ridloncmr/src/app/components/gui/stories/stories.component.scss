@@ -4,6 +4,11 @@
   gap: 20px;
   width: 100%;
   max-width: 1200px;
-  margin-top: 20px;
-  transition: all 0.2s ease-in-out;
+}
+
+app-article-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }

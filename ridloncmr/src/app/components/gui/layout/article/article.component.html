@@ -1,6 +1,6 @@
-<app-card>
+<article class="story-card">
   <button class="back-btn" (click)="goBack()">← Back</button>
 
   <h2>{{ article?.name }}</h2>
-  <p>{{ article?.content }}</p>
-</app-card>
+  <div class="article-content" [innerHTML]="sanitizedContent"></div>
+</article>

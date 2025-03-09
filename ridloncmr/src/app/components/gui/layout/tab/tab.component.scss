@@ -1,22 +1,24 @@
+@import '../../../../../assets/styles/mixins.scss';
+
 .tabs {
   display: flex;
   gap: 10px;
-  border-bottom: 2px solid var(--gray);
+  @include reg-text(var(--header-black));
 
   button {
     padding: 10px 15px;
     border: none;
     background: none;
-    color: var(--white);
     cursor: pointer;
     transition: 0.3s;
+    font-weight: 600;
 
     &.active {
-      border-bottom: 3px solid var(--hacker-green);
+      border-bottom: 3px solid var(--hacker-pink);
     }
 
     &:hover {
-      color: var(--hacker-green);
+      color: var(--hacker-pink);
     }
   }
 }

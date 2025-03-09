@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FileNode } from '../../../../core/models/file-node.model';
-import { ContentService } from '../../../../core/services/content.service';
-import { CommonModule } from '@angular/common';
-import { CardComponent } from '../card/card.component';
+import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Location } from '@angular/common';
-
+import { ContentService } from '../../../../core/services/content.service';
+import { FileNode } from '../../../../core/models/file-node.model';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [CommonModule, CardComponent],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss'
 })
 export class ArticleComponent implements OnInit {
   article: FileNode | null = null;
+  sanitizedContent: SafeHtml = '';
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private contentService: ContentService,
+    private sanitizer: DomSanitizer,  // ✅ Inject DomSanitizer
     private location: Location
   ) {}
 
@@ -28,10 +26,15 @@ export class ArticleComponent implements OnInit {
     const articleId = this.route.snapshot.paramMap.get('id');
     if (articleId) {
       this.article = this.contentService.getFileNodeById(articleId);
+
+      // ✅ Sanitize HTML content
+      if (this.article?.content) {
+        this.sanitizedContent = this.sanitizer.bypassSecurityTrustHtml(this.article.content);
+      }
     }
   }
 
   goBack(): void {
-    this.location.back(); // navigate back
+    this.location.back();
   }
 }

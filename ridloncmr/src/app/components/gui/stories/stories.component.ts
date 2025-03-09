@@ -17,11 +17,11 @@ import { trigger, transition, animate, style } from '@angular/animations';
   animations: [
     trigger('fadeInOutAnimation', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(15px) scale(1)' }),
-        animate('250ms ease-out', style({ opacity: 1, transform: 'translateY(0) scale(1)' }))
+        style({ opacity: 0, transform: 'scale(1)' }),
+        animate('250ms ease-out', style({ opacity: 1, transform: 'scale(1)' }))
       ]),
       transition(':leave', [
-        animate('150ms ease-in', style({ opacity: 0, transform: 'translateY(-10px) scale(1)' }))
+        animate('150ms ease-in', style({ opacity: 0, transform: 'scale(1)' }))
       ])
     ])
   ]
