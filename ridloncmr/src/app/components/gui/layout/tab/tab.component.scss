@@ -1,0 +1,22 @@
+.tabs {
+  display: flex;
+  gap: 10px;
+  border-bottom: 2px solid var(--gray);
+
+  button {
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    color: var(--white);
+    cursor: pointer;
+    transition: 0.3s;
+
+    &.active {
+      border-bottom: 3px solid var(--hacker-green);
+    }
+
+    &:hover {
+      color: var(--hacker-green);
+    }
+  }
+}

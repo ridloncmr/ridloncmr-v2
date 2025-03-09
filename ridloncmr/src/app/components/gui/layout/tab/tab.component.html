@@ -1,0 +1,8 @@
+<div class="tabs">
+  <button
+    *ngFor="let dir of directories"
+    (click)="selectTab(dir.id)"
+    [class.active]="activeTab === dir.id">
+    {{ dir.name }}
+  </button>
+</div>

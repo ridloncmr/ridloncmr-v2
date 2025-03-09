@@ -1,1 +1,15 @@
-<p>stories works!</p>
+<app-card>
+  <!-- Tabs -->
+  <app-tab
+    [directories]="directories"
+    [activeTab]="activeTab"
+    (tabChange)="setActiveTab($event)">
+  </app-tab>
+
+  <!-- Article Previews with Animation -->
+  <div class="article-grid">
+    <ng-container *ngFor="let file of getCurrentFiles()">
+      <app-article-preview [article]="file"></app-article-preview>
+    </ng-container>
+  </div>
+</app-card>

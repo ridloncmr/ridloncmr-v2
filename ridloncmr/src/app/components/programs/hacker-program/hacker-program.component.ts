@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, ElementRef, HostListener, AfterViewInit, 
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BaseProgramComponent } from '../base-program.component';
-import { BruteForceAttempts, ErrorMessages, FakeCodeSnippets, HackingProcesses, IpScanResults, PasswordDumps } from '../../../data/hacker-data';
+import { BruteForceAttempts, ErrorMessages, FakeCodeSnippets, HackingProcesses, IpScanResults, PasswordDumps } from '../../../data/program-data/hacker-data';
 
 @Component({
   selector: 'app-hacker-program',

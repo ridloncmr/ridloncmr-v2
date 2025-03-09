@@ -7,6 +7,7 @@ import { ContactComponent } from './components/gui/contact/contact.component';
 import { ProjectsComponent } from './components/gui/projects/projects.component';
 import { StoriesComponent } from './components/gui/stories/stories.component';
 import { WelcomeComponent } from './components/gui/welcome/welcome.component';
+import { ArticleComponent } from './components/gui/layout/article/article.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,7 @@ export const routes: Routes = [
       { path: 'contact', component: ContactComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'stories', component: StoriesComponent },
+      { path: 'article/:id', component: ArticleComponent },
     ],
   },
 ];
