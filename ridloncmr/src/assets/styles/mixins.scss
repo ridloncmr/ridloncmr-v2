@@ -29,9 +29,14 @@
   color: $color;
 }
 
+@mixin reg-text($color: var(--black)) {
+  font-family: var(--reg-font-family);
+  color: $color;
+}
+
 
 @mixin parallax($min-height: 100vh) {
-  min-height: calc($min-height - 302px);
+  min-height: calc($min-height - 252px);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
