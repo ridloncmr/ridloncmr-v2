@@ -1,46 +1,34 @@
+@import '../../../assets/styles/mixins.scss';
+
 .terminal-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flex-center(column);
   gap: 5px;
   margin-top: 10px;
 }
 
 .terminal {
+  @include flex-center(column, flex-start, stretch);
+  @include hacker-text(var(--white));
+  @include border-box;
   width: 1200px;
   height: calc(90vh - 120px);
-  background-color: black;
-  color: var(--white);
-  font-family: var(--hacker-font-family);
-  border: 2px solid gray;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 
 .terminal-body {
+  @include hide-scrollbar;
   flex-grow: 1;
   padding: 5px;
   overflow-y: auto;
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* IE/Edge */
 }
 
-  /* Chrome, Safari */
-  .terminal-body::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    background: transparent;
+@media (max-width: 1250px) {
+  .terminal-container {
+    width: 95vw;
   }
 
-  @media (max-width: 1250px) {
-    .terminal-container {
-      width: 95vw;
-    }
-
-    .terminal {
-      width: 90vw;
-    }
+  .terminal {
+    width: 90vw;
   }
+}

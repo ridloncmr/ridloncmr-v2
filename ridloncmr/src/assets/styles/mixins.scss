@@ -1,0 +1,30 @@
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin hide-scrollbar {
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE/Edge */
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+  }
+}
+
+@mixin border-box($bg: var(--black), $border: 2px solid var(--gray)) {
+  background: $bg;
+  border: $border;
+  padding: 10px;
+}
+
+@mixin hacker-text($color: var(--hacker-green)) {
+  font-family: var(--hacker-font-family);
+  color: $color;
+}

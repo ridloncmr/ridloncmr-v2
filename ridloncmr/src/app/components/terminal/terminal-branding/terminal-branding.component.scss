@@ -1,28 +1,23 @@
 @import '../../../../assets/styles/animations.scss';
+@import '../../../../assets/styles/mixins.scss';
 
 .branding-box {
+  @include flex-center(column);
+  @include border-box;
+  @include hacker-text(var(--white));
   width: 1200px;
   height: 120px;
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--hacker-font-family);
-  border: 2px solid var(--gray);
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  padding: 10px;
 }
 
 .glitch-text {
+  @include flex-center;
+  @include hacker-text;
   font-size: 28px;
   font-weight: bold;
   text-transform: uppercase;
-  color: var(--hacker-green);
   letter-spacing: 1.5px;
-  display: flex;
-  justify-content: center;
   padding: 12px;
   margin: 0;
 }
@@ -35,8 +30,8 @@
 
 .subtext {
   font-size: 14px;
-  color: var(--lightgray);
   font-style: italic;
+  color: var(--lightgray);
   padding-bottom: 5px;
 }
 
@@ -49,7 +44,7 @@
 @media (max-width: 450px) {
   .tagline,
   .subtext {
+    font-size: 0.75em;
     margin: inherit -5px;
-    font-size: .75em;
   }
 }

@@ -1,16 +1,16 @@
 @import "../../../../assets/styles/animations.scss";
+@import "../../../../assets/styles/mixins.scss";
 
 .hacker-container {
-  color: var(--hacker-green);
+  @include hacker-text;
   font-family: var(--hacker-font-family);
   padding: 10px;
 }
 
 .hacker-output {
-  overflow-y: auto;
+  @include flex-center(column, flex-end, stretch);
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--hacker-green) var(--black);
 }
@@ -31,6 +31,6 @@
 }
 
 .compilation-text {
-  color: var(--white);
   font-weight: bold;
+  color: var(--white);
 }

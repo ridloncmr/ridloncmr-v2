@@ -3,7 +3,7 @@
 :root {
   --hacker-font-family: "Lucida Console", Monaco, monospace;
 
-  // colors
+  /* Colors */
   --white: #fff;
 
   --gray: gray;
@@ -16,18 +16,13 @@
   --dark-green: rgba(0, 255, 0, 0.1);
 
   --black: #000;
-  --inkwell-black: #1e1e1e
+  --inkwell-black: #1e1e1e;
   --off-black: #222;
   --semi-tran-black: rgba(255, 255, 255, 0.05);
 
   --hacker-green: #0f0;
   --hacker-blue: aqua;
-  --hacker-pink: #ff4081;;
-}
-
-@mixin flex-vh-center {
-  display: flex;
-
+  --hacker-pink: #ff4081;
 }
 
 html,

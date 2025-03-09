@@ -1,11 +1,13 @@
+@import '../../../../assets/styles/mixins.scss';
+
 .terminal-prompt-container {
   height: 100%;
 
   .output {
     color: var(--lightgray);
     white-space: pre-wrap;
-    padding: 5px 0;
     line-height: 22px;
+    padding: 5px 0;
   }
 
   .input-line {
@@ -29,9 +31,9 @@
   }
 
   .suggestion-inline {
+    @include hacker-text(var(--semi-tran-gray));
     position: absolute;
     top: 0;
-    color: var(--semi-tran-gray);
     font-style: italic;
     pointer-events: none;
     user-select: none;
@@ -39,15 +41,14 @@
   }
 
   input {
+    @include hacker-text;
+    width: 100%;
+    position: relative;
     background: none;
     border: none;
-    color: var(--hacker-green);
-    font-size: 16px;
-    width: 100%;
     outline: none;
-    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 16px;
     caret-color: var(--hacker-green);
-    position: relative;
     padding-top: 5px;
   }
 }

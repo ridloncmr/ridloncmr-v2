@@ -1,30 +1,25 @@
 @import "../../../../assets/styles/animations.scss";
+@import "../../../../assets/styles/mixins.scss";
 
 .info-container {
-  font-family: var(--hacker-font-family);
-  color: var(--lightgray);
-  padding: 10px;
-  border-bottom: 1px solid var(--dark-red);
-  margin-bottom: 10px;
-  font-size: 14px;
+  @include flex-center(column-reverse, flex-end, stretch);
+  @include hacker-text(var(--lightgray));
   height: 160px;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
   overflow: hidden;
   cursor: pointer;
   transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--dark-red);
 
   .boot-sequence {
-    display: flex;
-    flex-direction: column-reverse;
+    @include flex-center(column-reverse, flex-end, stretch);
   }
 
   .system-info {
+    @include flex-center(column, center, stretch);
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
   }
@@ -38,9 +33,7 @@
   }
 
   .collapsed-line {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-center(row, space-between, center);
     width: 100%;
     opacity: 0;
     transform: translateY(20px);
