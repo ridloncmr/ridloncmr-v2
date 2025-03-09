@@ -1,6 +1,7 @@
 import { OnInit, Component } from '@angular/core';
-import { FileNode, IFileNode } from '../../core/models/file-node.model';
-import { ContentService } from '../../core/services/content.service';
+import { ContentService } from '../../../core/services/content.service';
+import { IFileNode, FileNode } from '../../../core/models/file-node.model';
+
 
 @Component({
   standalone: true,

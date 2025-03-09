@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ContentService } from '../../../core/services/content.service';
-import { BaseFileComponent } from '../base-file.component';
-import { FileNode } from '../../../core/models/file-node.model';
 import { CommonModule } from '@angular/common';
-import { ArticlePreviewComponent } from '../layout/article-preview/article-preview.component';
-import { CardComponent } from '../layout/card/card.component';
-import { TabComponent } from '../layout/tab/tab.component';
+import { Component, OnInit } from '@angular/core';
+import { FileNode } from '../../../../core/models/file-node.model';
+import { ContentService } from '../../../../core/services/content.service';
+import { ArticlePreviewComponent } from '../../layout/article-preview/article-preview.component';
+import { CardComponent } from '../../layout/card/card.component';
+import { TabComponent } from '../../layout/tab/tab.component';
+import { BaseFileComponent } from '../base-file.component';
+
 
 @Component({
   selector: 'app-contact',
