@@ -12,6 +12,176 @@
         "contentKey": "Introduction"
       },
       {
+        "id": "experience",
+        "name": "experience",
+        "type": "directory",
+        "content": "My experience as a developer",
+        "children": [
+          {
+            "id": "msum",
+            "name": "MSUM",
+            "type": "directory",
+            "children": [
+              {
+                "id": "title",
+                "name": "Title",
+                "type": "file",
+                "content": "Bachelors of Science - Computer Science"
+              },
+              {
+                "id": "tenure",
+                "name": "Tenure",
+                "type": "file",
+                "content": "Spetember 2011 ~ May 2016"
+              },
+              {
+                "id": "",
+                "name": "",
+                "type": "file",
+                "content": "Go Dragons!"
+              },
+              {
+                "id": "",
+                "name": "",
+                "type": "file",
+                "content": "Participated in programming contests and hackathons, including Digi-Key Collegiate Computing Competition, Midwest Instruction and Computer Symposium (MICS), and Hack-Fargo Hackathon."
+              },
+              {
+                "id": "",
+                "name": "",
+                "type": "file",
+                "content": "Active member in MSUM Chapter of Association for Computing Machinery."
+              }
+            ]
+          },
+          {
+            "id": "acl-sound",
+            "name": "ACL Sound",
+            "type": "directory",
+            "children": [
+              {
+                "id": "title",
+                "name": "Title",
+                "type": "file",
+                "content": "ACL Sound - DJ"
+              },
+              {
+                "id": "tenure",
+                "name": "Tenure",
+                "type": "file",
+                "content": "May 2014 ~ Spetember 2016"
+              },
+              {
+                "id": "",
+                "name": "",
+                "type": "file",
+                "content": "Aquired a deep love and understanding of the DJ business. From picking and mixing music, to carrying gear for miles, in an effort to put on an amazing show"
+              }
+            ]
+          },
+          {
+            "id": "memory-share",
+            "name": "MemoryShare",
+            "type": "directory",
+            "children": [
+              {
+                "id": "title",
+                "name": "Title",
+                "type": "file",
+                "content": "Intern Developer"
+              },
+              {
+                "id": "tenure",
+                "name": "Tenure",
+                "type": "file",
+                "content": "May 2015 ~ Sep 2015"
+              },
+              {
+                "id": "",
+                "name": "",
+                "type": "file",
+                "content": "Gained strong understanding of startup culture by working directly with the CEO and CTO to implement company culture and strateg"
+              }
+            ]
+          },
+          {
+            "id": "allegiance",
+            "name": "Allegiance",
+            "type": "directory",
+            "children": [
+              {
+                "id": "title",
+                "name": "Title",
+                "type": "file",
+                "content": "Scrum Master & Software Developer"
+              },
+              {
+                "id": "tenure",
+                "name": "Tenure",
+                "type": "file",
+                "content": "June 2016 ~ Nov 2019"
+              },
+              {
+                "id": "",
+                "name": "",
+                "type": "file",
+                "content": "Serve as a leader for consistent frontend user experience on an Agile team practicing 'Scrum' software development methodology"
+              }
+            ]
+          },
+          {
+            "id": "agcode",
+            "name": "AgCode",
+            "type": "directory",
+            "children": [
+              {
+                "id": "title",
+                "name": "Title",
+                "type": "file",
+                "content": "Lead Developer"
+              },
+              {
+                "id": "tenure",
+                "name": "Tenure",
+                "type": "file",
+                "content": "Nov 2019 ~ Nov 2022"
+              },
+              {
+                "id": "",
+                "name": "",
+                "type": "file",
+                "content": "Serve as lead developer on an Agile team practicing 'Kanban' software development"
+              }
+            ]
+          },
+          {
+            "id": "callrevu",
+            "name": "CallRevu",
+            "type": "directory",
+            "children": [
+              {
+                "id": "title",
+                "name": "Title",
+                "type": "file",
+                "content": "Application Architect"
+              },
+              {
+                "id": "tenure",
+                "name": "Tenure",
+                "type": "file",
+                "content": "Nov 2022 ~ Present"
+              },
+              {
+                "id": "",
+                "name": "",
+                "type": "file",
+                "content": "Developed an IVR enrollment application, a pivotal component in a comprehensive voice identification project. The IVR system utilized Azure Cognitive Services to facilitate the creation of voice profiles. Specifically responsible for crafting the enrollment process, seamlessly guiding users through profile creation via Twilio webhooks and Azure Functions. Implemented real-time communication using SignalR, ensuring a synchronized experience between IVR calls and a dedicated web app. Contributed to the project's success in achieving seamless voice profile creation and identification."
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "hacker-program",
         "name": "hacker.exe",
         "type": "executable"

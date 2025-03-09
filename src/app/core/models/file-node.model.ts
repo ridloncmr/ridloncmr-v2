@@ -1,18 +1,19 @@
+export type FileType = 'directory' | 'file' | 'executable' | 'image';
+
 export interface IFileNode {
   id: string;
   name: string;
-  type: 'directory' | 'file' | 'executable';
+  type: FileType;
   children?: IFileNode[];
   content?: string;
   contentKey?: string;
   isUrl?: boolean;
 }
 
-
 export class FileNode {
   id: string;
   name: string;
-  type: 'directory' | 'file' | 'executable';
+  type: FileType;
   children?: FileNode[];
   content?: string;
   contentKey?: string;
@@ -25,7 +26,9 @@ export class FileNode {
     this.content = data.content;
     this.contentKey = data.contentKey;
     this.isUrl = data.isUrl;
-    this.children = data.children?.map((child: FileNode) => new FileNode(child)) ?? (this.type === 'directory' ? [] : undefined);
+    this.children =
+      data.children?.map((child: FileNode) => new FileNode(child)) ??
+      (this.type === 'directory' ? [] : undefined);
   }
 
   static fromJson(json: IFileNode): FileNode {

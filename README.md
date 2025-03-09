@@ -69,7 +69,7 @@ Each file or directory in the content system follows this interface:
 export interface IFileNode {
   id: string;
   name: string;
-  type: 'directory' | 'file' | 'executable';
+  type: 'directory' | 'file' | 'executable' | 'image';
   children?: IFileNode[];
   content?: string;
   isUrl?: boolean;
