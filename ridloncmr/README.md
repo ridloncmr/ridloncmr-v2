@@ -1,27 +1,127 @@
-# Ridloncmr
+# Ridloncmr Terminal Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12.
+This project is a **terminal-style web application** designed to serve content dynamically in a file system-like structure. It provides a command-line interface to navigate and interact with the site's content. There is an optional GUI for those less inclined to the terminal ;) 
 
-## Development server
+## 🚀 Tech Stack
+- **Built with Angular 17**
+  - This project is specifically developed using **Angular 17** to keep up with the latest features and best practices.
+  - It serves as a practice ground for updating Angular applications.
+- **Hosted on Vercel**
+  - The site is deployed on **Vercel** for fast, reliable, and scalable hosting.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 📂 Content Management
+The site is powered by a JSON-based **file system**, where content is structured using `IFileNode` objects. Each piece of content is referenced using a `contentKey` and stored separately in a TypeScript file to keep JSON clean and readable.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### **Adding a New Piece of Content**
+To add new content, follow these steps:
 
-## Build
+1. **Modify `content-data.json`**
+   - Add a new JSON object representing the new content file.
+   
+   #### Example:
+   ```json
+   {
+     "id": "ridloncmr",
+     "name": "Ridloncmr",
+     "type": "directory",
+     "children": [
+       {
+         "id": "introduction",
+         "name": "Introduction.txt",
+         "type": "file",
+         "contentKey": "Introduction"
+       }
+     ]
+   }
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. **Create or Modify the Content File**
+   - Inside `src/app/data/content-text/`, create a new file (if it doesn’t exist) and define the content as a string.
+   
+   #### Example: `introduction.ts`
+   ```typescript
+   export const Introduction: string = `
+   👋 Hey, I’m Christian!
+   
+   I’m an Application Architect who thrives on breaking down complexity, optimizing systems, and delivering clean, scalable solutions...
+   `;
+   ```
 
-## Running unit tests
+3. **Export the New Content in `content-index.ts`**
+   - Add the new content export to `src/app/data/content-text/content-index.ts`.
+   
+   #### Example:
+   ```typescript
+   export { Introduction } from './introduction';
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. **Ensure `contentKey` Matches the Exported Variable**
+   - The `contentKey` in `content-data.json` **must match** the exported variable name in `content-index.ts`. 
+   - Example: If `contentKey: "Introduction"` is in `content-data.json`, then `export const Introduction` must exist in `content-index.ts`.
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 📌 IFileNode Structure
+Each file or directory in the content system follows this interface:
+```typescript
+export interface IFileNode {
+  id: string;
+  name: string;
+  type: 'directory' | 'file' | 'executable';
+  children?: IFileNode[];
+  content?: string;
+  isUrl?: boolean;
+  contentKey?: string;
+}
+```
 
-## Further help
+- **`id`**: Unique identifier for the file or directory.
+- **`name`**: Display name in the file system.
+- **`type`**: Defines whether the node is a `directory`, `file`, or `executable`.
+- **`children`**: (Optional) Sub-files or sub-directories.
+- **`content`**: (Optional) The actual content (if stored inline).
+- **`isUrl`**: (Optional) If `true`, indicates that the file is an external link.
+- **`contentKey`**: (Optional) References the associated content in `content-index.ts`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 🔧 Terminal Commands
+The terminal allows users to interact with the file system using commands. Each command is defined in `command-data.ts` and must be registered there to be available in the terminal.
+
+### **Adding a New Command**
+To add a new command:
+
+1. **Modify `command-data.ts`**
+   - Add a new command object inside the `COMMANDS` array.
+   
+   #### Example:
+   ```typescript
+   {
+     name: 'newcmd',
+     description: 'Description of the new command',
+     usage: "newcmd [options]",
+     execute: (args, service: CommandService) => {
+       service.outputHistory.push('Executing new command...');
+     }
+   }
+   ```
+
+2. **Ensure It Appears in the `help` Command**
+   - The `help` command dynamically lists all commands in the `COMMANDS` array, so adding the command here automatically includes it in the help list.
+
+### **Existing Commands**
+| Command  | Description | Usage |
+|----------|------------|--------|
+| `help`   | Lists available commands | `help` |
+| `dir`    | Lists files and directories | `dir` |
+| `cd`     | Change directory | `cd <folder>` or `cd ..` |
+| `open`   | Opens a file | `open <file>` |
+| `run`    | Executes a program | `run <program.exe>` |
+| `glitch` | Toggles glitch effects | `glitch on \| off` |
+| `cls`    | Clears the screen | `cls` |
+| `gui`    | Switches to GUI mode | `gui` |
+
+---
+
