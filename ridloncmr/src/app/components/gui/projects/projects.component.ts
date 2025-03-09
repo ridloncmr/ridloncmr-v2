@@ -25,7 +25,7 @@ export class ProjectsComponent extends BaseFileComponent implements OnInit {
     return 'projects';
   }
 
-  override ngOnInit(): void {
+  override async ngOnInit(): Promise<void> {
     super.ngOnInit();
     if (this.directories.length > 0) {
       this.activeTab = this.directories[0].id;

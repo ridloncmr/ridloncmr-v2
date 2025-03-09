@@ -18,16 +18,15 @@ export class ArticleComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private contentService: ContentService,
-    private sanitizer: DomSanitizer,  // ✅ Inject DomSanitizer
+    private sanitizer: DomSanitizer,
     private location: Location
   ) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     const articleId = this.route.snapshot.paramMap.get('id');
     if (articleId) {
-      this.article = this.contentService.getFileNodeById(articleId);
+      this.article = await this.contentService.getFileNodeById(articleId);
 
-      // ✅ Sanitize HTML content
       if (this.article?.content) {
         this.sanitizedContent = this.sanitizer.bypassSecurityTrustHtml(this.article.content);
       }

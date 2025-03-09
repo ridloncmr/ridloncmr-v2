@@ -25,7 +25,7 @@ export class WelcomeComponent extends BaseFileComponent implements OnInit {
     return 'ridloncmr'; // This should match the ID in CONTENT_DATA
   }
 
-  override ngOnInit(): void {
+  override async ngOnInit(): Promise<void> {
     super.ngOnInit();
     if (this.directories.length > 0) {
       this.activeTab = this.directories[0].id;

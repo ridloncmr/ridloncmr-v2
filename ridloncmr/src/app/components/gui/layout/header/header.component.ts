@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private contentService: ContentService) {}
 
-  ngOnInit(): void {
-    this.routes = this.contentService.getFileSystem();
+  async ngOnInit(): Promise<void> {
+    this.routes = await this.contentService.getFileSystem();
   }
 }

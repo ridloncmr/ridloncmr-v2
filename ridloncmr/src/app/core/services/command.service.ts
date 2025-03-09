@@ -1,32 +1,46 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { FileNode } from '../models/file-node.model';
-import { CONTENT_DATA } from '../../data/content-data';
-import { COMMANDS } from '../../data/command-data';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-
+import { ContentService } from './content.service';
+import { COMMANDS } from '../command-data';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CommandService {
-  outputHistory: SafeHtml[] = ['Welcome to ridloncmr.com!', "Type <span class=\"terminal-highlight\">gui</span> to go to the User Interface"];
+  outputHistory: SafeHtml[] = [
+    'Welcome to ridloncmr.com!',
+    'Type <span class="terminal-highlight">gui</span> to go to the User Interface',
+  ];
   currentPath: string[] = []; // Tracks the current directory path
-  fileSystem: FileNode[] = CONTENT_DATA;
+  fileSystem: FileNode[] = [];
   isGlitching: boolean = true;
   private glitchIntervals: any[] = []; // Stores active intervals to clear them
 
-  constructor(public router: Router, public sanitizer: DomSanitizer) {}
+  constructor(
+    public router: Router,
+    public sanitizer: DomSanitizer,
+    private contentService: ContentService
+  ) {
+    this.initFileSystem();
+  }
+
+  private async initFileSystem() {
+    this.fileSystem = await this.contentService.getFileSystem();
+  }
 
   executeCommand(input: string) {
     if (!input.trim()) return;
 
     this.outputHistory.push(`> ${input}`);
     const parts = input.trim().split(' ');
-    const commandName = parts.shift()?.toLowerCase() || "";
-    const args = parts.map(arg => arg.toLowerCase());
+    const commandName = parts.shift()?.toLowerCase() || '';
+    const args = parts.map((arg) => arg.toLowerCase());
 
-    const command = COMMANDS.find(cmd => cmd.name.toLowerCase() === commandName);
+    const command = COMMANDS.find(
+      (cmd) => cmd.name.toLowerCase() === commandName
+    );
     if (command) {
       command.execute(args, this);
     } else {
@@ -35,12 +49,16 @@ export class CommandService {
   }
 
   getCurrentPath(): string {
-    return 'c:\\' + (this.currentPath.length ? this.currentPath.join('\\') : '');
+    return (
+      'c:\\' + (this.currentPath.length ? this.currentPath.join('\\') : '')
+    );
   }
 
   getCurrentLocation(): FileNode[] {
     return this.currentPath.reduce((dir, sub) => {
-      const found = dir.find(item => item.id === sub && item.type === 'directory');
+      const found = dir.find(
+        (item) => item.id === sub && item.type === 'directory'
+      );
       return found ? found.children || [] : [];
     }, this.fileSystem);
   }
@@ -50,9 +68,12 @@ export class CommandService {
     if (parts.length === 0) return []; // No input, no suggestions
 
     const commandName = parts[0].toLowerCase();
-    const lastWord = parts.length > 1 ? parts[parts.length - 1].toLowerCase() : '';
+    const lastWord =
+      parts.length > 1 ? parts[parts.length - 1].toLowerCase() : '';
 
-    const command = COMMANDS.find(cmd => cmd.name.toLowerCase() === commandName);
+    const command = COMMANDS.find(
+      (cmd) => cmd.name.toLowerCase() === commandName
+    );
     if (!command) return []; // Ignore if the command is invalid
 
     const location = this.getCurrentLocation();
@@ -87,7 +108,7 @@ export class CommandService {
   }
 
   clearGlitchIntervals() {
-    this.glitchIntervals.forEach(interval => clearInterval(interval));
+    this.glitchIntervals.forEach((interval) => clearInterval(interval));
     this.glitchIntervals = [];
   }
 

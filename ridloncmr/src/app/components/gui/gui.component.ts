@@ -24,7 +24,7 @@ export class GuiComponent implements OnInit {
 
   constructor(private contentService: ContentService) {}
 
-  ngOnInit() {
-    this.fileSystem = this.contentService.getFileSystem();
+  async ngOnInit() {
+    this.fileSystem = await this.contentService.getFileSystem();
   }
 }

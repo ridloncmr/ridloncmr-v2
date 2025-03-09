@@ -1,25 +1,44 @@
 import { Injectable } from '@angular/core';
-import { FileNode } from '../models/file-node.model';
-import { CONTENT_DATA } from '../../data/content-data';
+import { HttpClient } from '@angular/common/http';
+import { lastValueFrom } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { FileNode, IFileNode } from '../models/file-node.model';
+import * as ContentText from '../../data/content-index';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ContentService {
-  getFileSystem(): FileNode[] {
-    return CONTENT_DATA; // Returns the root-level file structure
+  private contentUrl = 'assets/data/content-data.json';
+
+  constructor(private http: HttpClient) {}
+
+  async getFileSystem(): Promise<FileNode[]> {
+    const data = await lastValueFrom(
+      this.http.get<IFileNode[]>(this.contentUrl)
+    );
+
+    return data.map(node => this.resolveContent(node));
   }
 
-  getTopLevelNodes(): FileNode[] {
-    return CONTENT_DATA.map(node => new FileNode(node.id, node.name, node.type, node.content, node.isUrl, []));
+  async getFileNodeById(id: string): Promise<FileNode | null> {
+    const nodes = await this.getFileSystem();
+    return this.findNode(nodes, id);
   }
 
-  getFileNodeById(id: string): FileNode {
-    const foundNode = this.findNode(CONTENT_DATA, id);
-    if (!foundNode) {
-      throw new Error(`FileNode with ID '${id}' not found.`);
-    }
-    return foundNode;
+  async getTopLevelNodes(): Promise<FileNode[]> {
+    let fileSystem = await this.getFileSystem();
+    return fileSystem.map(
+      (node) =>
+        new FileNode({
+          id: node.id,
+          name: node.name,
+          type: node.type,
+          content: node.content,
+          isUrl: node.isUrl,
+          children: [],
+        } as IFileNode)
+    );
   }
 
   getAllDirectoryNodes(nodes: FileNode[]): FileNode[] {
@@ -29,7 +48,9 @@ export class ContentService {
       if (node.type === 'directory') {
         directories.push(node);
         if (node.children?.length) {
-          directories = directories.concat(this.getAllDirectoryNodes(node.children));
+          directories = directories.concat(
+            this.getAllDirectoryNodes(node.children)
+          );
         }
       }
     }
@@ -54,16 +75,22 @@ export class ContentService {
 
   private findNode(nodes: FileNode[], id: string): FileNode | null {
     for (const node of nodes) {
-      if (node.id === id) {
-        return node; // Found the node
-      }
+      if (node.id === id) return node;
       if (node.children?.length) {
         const foundInChildren = this.findNode(node.children, id);
-        if (foundInChildren) {
-          return foundInChildren; // Found in children
-        }
+        if (foundInChildren) return foundInChildren;
       }
     }
-    return null; // No match found
+    return null;
+  }
+
+  private resolveContent(node: IFileNode): FileNode {
+    const resolvedNode = new FileNode({
+      ...node,
+      content: node.contentKey ? (ContentText as any)[node.contentKey] : node.content,
+      children: node.children?.map(child => this.resolveContent(child))
+    });
+
+    return resolvedNode;
   }
 }

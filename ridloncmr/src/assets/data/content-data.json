@@ -1,0 +1,119 @@
+[
+  {
+    "id": "ridloncmr",
+    "name": "Ridloncmr",
+    "type": "directory",
+    "children": [
+      {
+        "id": "introduction",
+        "name": "Introduction.txt",
+        "type": "file",
+        "content": "Introduction",
+        "contentKey": "Introduction"
+      },
+      {
+        "id": "hacker-program",
+        "name": "hacker.exe",
+        "type": "executable"
+      }
+    ]
+  },
+  {
+    "id": "stories",
+    "name": "Stories",
+    "type": "directory",
+    "children": [
+      {
+        "id": "GlitchVerse",
+        "name": "GlitchVerse",
+        "type": "directory",
+        "children": [
+          {
+            "id": "glitched-out",
+            "name": "GlitchedOut.txt",
+            "type": "file",
+            "content": "GlitchedOut",
+            "contentKey": "GlitchedOut"
+          },
+          {
+            "id": "vanishing-point",
+            "name": "VanishingPoint.txt",
+            "type": "file",
+            "content": "VanishingPoint",
+            "contentKey": "VanishingPoint"
+          },
+          {
+            "id": "the-child-who-sees-too-much",
+            "name": "TheChildWhoSeeTooMuch.txt",
+            "type": "file",
+            "content": "TheChildWhoSeesTooMuch",
+            "contentKey": "TheChildWhoSeesTooMuch"
+          }
+        ]
+      },
+      {
+        "id": "hunger-that-remains",
+        "name": "HungerThatRemains.txt",
+        "type": "file",
+        "content": "HungerThatRemains",
+        "contentKey": "HungerThatRemains"
+      },
+      {
+        "id": "bridge-of-death",
+        "name": "BridgeOfDeath.txt",
+        "type": "file",
+        "content": "BridgeOfDeath",
+        "contentKey": "BridgeOfDeath"
+      }
+    ]
+  },
+  {
+    "id": "projects",
+    "name": "Projects",
+    "type": "directory",
+    "children": [
+      {
+        "id": "playball",
+        "name": "PlayBall.txt",
+        "type": "file",
+        "content": "PlayBall.gg is a modern rec league management SaaS focused on frictionless game organization.",
+        "contentKey": "Playball"
+
+      },
+      {
+        "id": "arg",
+        "name": "ARG.txt",
+        "type": "file",
+        "content": "Developing an interactive horror ARG experience built around the GlitchedOut universe.",
+        "contentKey": "Arg"
+      }
+    ]
+  },
+  {
+    "id": "contact",
+    "name": "Contact",
+    "type": "directory",
+    "children": [
+      {
+        "id": "linkedin",
+        "name": "LinkedIn.url",
+        "type": "file",
+        "content": "www.linkedin.com/in/christian-ridlon-05507312b",
+        "isUrl": true
+      },
+      {
+        "id": "github",
+        "name": "GitHub.url",
+        "type": "file",
+        "content": "https://github.com/ridloncmr",
+        "isUrl": true
+      },
+      {
+        "id": "email",
+        "name": "Email.txt",
+        "type": "file",
+        "content": "ridloncmr@gmail.com"
+      }
+    ]
+  }
+]

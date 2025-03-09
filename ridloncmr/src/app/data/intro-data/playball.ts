@@ -1,4 +1,4 @@
-export const Introduction: string =
+export const Playball: string =
 `
 👋 Hey, I’m Christian!
 
