@@ -1,3 +1,5 @@
+@import '../../../../../assets/styles/mixins.scss';
+
 .header {
   position: fixed;
   top: 0;
@@ -17,16 +19,15 @@
   }
 
   .header-item {
+    @include reg-text(var(--white));
     margin-left: 15px;
-    background-color: #282928;
+    background-color: var(--header-black);
     overflow: hidden;
     position: relative;
     display: inline-block;
     font-weight: 500;
     font-size: 20px;
     line-height: 32px;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    color: #fff;
   }
 
   .header-item::before,
@@ -37,7 +38,7 @@
     left: 0;
   }
   .header-item::before {
-    background-color: #ff4081;
+    background-color: var(--hacker-pink);
     height: 2px;
     bottom: 0;
     transform-origin: 100% 50%;
@@ -51,7 +52,7 @@
     transform-origin: 100%;
     transform: translate3d(200%, 0, 0);
     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-    color: #ff4081;
+    color: var(--hacker-pink);
   }
 
   .header-item:not(.active-link):hover::before {
@@ -73,5 +74,5 @@
 }
 
 .active-link {
-  color: #ff4081 !important;
+  color: var(--hacker-pink) !important;
 }
