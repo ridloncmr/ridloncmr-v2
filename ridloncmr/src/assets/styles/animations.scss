@@ -1,15 +1,15 @@
 // Glitch effect for text elements
-@keyframes glitch-effect {
-  0% { text-shadow: 2px 2px var(--white), -2px -2px var(--hacker-green); }
-  50% { text-shadow: -2px -2px var(--white), 2px 2px var(--hacker-green); }
-  100% { text-shadow: 2px 2px var(--white), -2px -2px var(--hacker-green); }
+@keyframes glitch-effect-blue {
+  0% { text-shadow: 2px 2px var(--white), -2px -2px var(--hacker-blue); }
+  50% { text-shadow: -2px -2px var(--white), 2px 2px var(--hacker-blue); }
+  100% { text-shadow: 2px 2px var(--white), -2px -2px var(--hacker-blue); }
 }
 
 // Subtle glitch for branding elements
-@keyframes glitch-effect-red {
-  0% { text-shadow: 2px 2px var(--red), -2px -2px var(--white); }
-  50% { text-shadow: -2px -2px var(--red), 2px 2px var(--white); }
-  100% { text-shadow: 2px 2px var(--red), -2px -2px var(--white); }
+@keyframes glitch-effect {
+  0% { text-shadow: 2px 2px var(--hacker-green), -2px -2px var(--white); }
+  50% { text-shadow: -2px -2px var(--hacker-green), 2px 2px var(--white); }
+  100% { text-shadow: 2px 2px var(--hacker-green), -2px -2px var(--white); }
 }
 
 // Fade-in effect for text
