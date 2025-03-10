@@ -21,9 +21,18 @@ export class ContentService {
     return data.map(node => this.resolveContent(node));
   }
 
-  async getFileNodeById(id: string): Promise<FileNode | null> {
+  async getFileNodeById(id: string): Promise<FileNode | undefined> {
     const nodes = await this.getFileSystem();
     return this.findNode(nodes, id);
+  }
+
+  async getAllDirectoriesById(id: string): Promise<FileNode[]> {
+    const rootNode = await this.getFileNodeById(id);
+    if (!rootNode || rootNode.type !== 'directory') {
+      return [];
+    }
+
+    return this.getAllDirectoryNodes(rootNode.children || [], true);
   }
 
   async getTopLevelNodes(): Promise<FileNode[]> {
@@ -41,15 +50,16 @@ export class ContentService {
     );
   }
 
-  getAllDirectoryNodes(nodes: FileNode[]): FileNode[] {
+  getAllDirectoryNodes(nodes: FileNode[], allNodes: boolean = false): FileNode[] {
     let directories: FileNode[] = [];
 
     for (const node of nodes) {
       if (node.type === 'directory') {
         directories.push(node);
-        if (node.children?.length) {
+        // all nodes grabs all children directories regardless of parent
+        if (node.children?.length && allNodes) {
           directories = directories.concat(
-            this.getAllDirectoryNodes(node.children)
+            this.getAllDirectoryNodes(node.children, true)
           );
         }
       }
@@ -58,22 +68,23 @@ export class ContentService {
     return directories;
   }
 
-  getAllFileNodes(nodes: FileNode[]): FileNode[] {
+  getAllFileNodes(nodes: FileNode[], allNodes: boolean = false): FileNode[] {
     let files: FileNode[] = [];
 
     for (const node of nodes) {
       if (node.type === 'file') {
         files.push(node);
       }
-      // if (node.children?.length) {
-      //   files = files.concat(this.getAllFileNodes(node.children));
-      // }
+      // all nodes grabs all children files regardless of parent
+      if (node.children?.length && allNodes) {
+        files = files.concat(this.getAllFileNodes(node.children, true));
+      }
     }
 
     return files;
   }
 
-  private findNode(nodes: FileNode[], id: string): FileNode | null {
+  private findNode(nodes: FileNode[], id: string): FileNode | undefined {
     for (const node of nodes) {
       if (node.id === id) return node;
       if (node.children?.length) {
@@ -81,7 +92,7 @@ export class ContentService {
         if (foundInChildren) return foundInChildren;
       }
     }
-    return null;
+    return undefined;
   }
 
   private resolveContent(node: IFileNode): FileNode {

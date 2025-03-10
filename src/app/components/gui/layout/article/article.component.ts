@@ -12,7 +12,7 @@ import { FileNode } from '../../../../core/models/file-node.model';
   styleUrl: './article.component.scss'
 })
 export class ArticleComponent implements OnInit {
-  article: FileNode | null = null;
+  article: FileNode | undefined = undefined;
   sanitizedContent: SafeHtml = '';
 
   constructor(

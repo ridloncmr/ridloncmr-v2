@@ -1,7 +1,7 @@
 <!-- Welcome Content -->
 <div class="article-wrapper">
   <div class="article-grid">
-    <ng-container *ngFor="let file of getCurrentFiles()">
+    <ng-container *ngFor="let file of directories">
       <app-article-preview [article]="file"></app-article-preview>
     </ng-container>
   </div>

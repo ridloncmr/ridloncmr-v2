@@ -13,7 +13,7 @@
       },
       {
         "id": "experience",
-        "name": "experience",
+        "name": "Experience",
         "type": "directory",
         "content": "My experience as a developer",
         "children": [

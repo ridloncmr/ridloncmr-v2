@@ -15,8 +15,13 @@ import { BaseFileComponent } from '../base-file.component';
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss',
 })
-export class WelcomeComponent extends BaseFileComponent implements OnInit {
-  activeTab: string = '';
+export class WelcomeComponent extends BaseFileComponent {
+
+  introduction: FileNode | undefined;
+  experienceDirectories: FileNode[] = [];
+
+  private introductionId: string = 'introduction';
+  private experienceId: string = 'experience';
 
   constructor(contentService: ContentService) {
     super(contentService);
@@ -26,19 +31,14 @@ export class WelcomeComponent extends BaseFileComponent implements OnInit {
     return 'ridloncmr'; // This should match the ID in CONTENT_DATA
   }
 
-  override async ngOnInit(): Promise<void> {
-    super.ngOnInit();
-    if (this.directories.length > 0) {
-      this.activeTab = this.directories[0].id;
-    }
+  protected override async onBaseOnInit(): Promise<void> {
+console.log(this.directories);
+
+    this.introduction = await this.contentService.getFileNodeById(this.introductionId);
+    this.experienceDirectories = await this.contentService.getAllDirectoriesById(this.experienceId);
+
+    console.log("introduction", this.introduction);
+    console.log("experienceDirectories", this.experienceDirectories);
   }
 
-  setActiveTab(tabId: string) {
-    this.activeTab = tabId;
-  }
-
-  getCurrentFiles(): FileNode[] {
-    const activeDirectory = this.directories.find(dir => dir.id === this.activeTab);
-    return activeDirectory?.children || [];
-  }
 }

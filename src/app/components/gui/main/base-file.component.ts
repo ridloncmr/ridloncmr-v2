@@ -8,7 +8,7 @@ import { IFileNode, FileNode } from '../../../core/models/file-node.model';
   template: '',
 })
 export abstract class BaseFileComponent implements OnInit {
-  content: IFileNode | null = null;
+  content: IFileNode | undefined = undefined;
   directories: IFileNode[] = [
     new FileNode({ id: 'home', name: 'Home', type: 'directory' }),
   ];
