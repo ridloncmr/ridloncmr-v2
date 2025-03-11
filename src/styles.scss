@@ -7,9 +7,12 @@
 
   /* Colors */
   --white: #fff;
+  --semi-tran-white: rgba(255, 255, 255, 0.85);
 
   --gray: gray;
-  --lightgray: lightgrey;
+  --lightgray: #ccc;
+  --med-gray: #aaa;
+  --dark-gray: rgba(255,255,255,0.1);
   --semi-tran-gray: rgba(255, 255, 255, 0.5);
 
   --red: red;
@@ -20,6 +23,7 @@
   --black: #000;
   --header-black: #282928;
   --semi-tran-black: rgba(255, 255, 255, 0.05);
+  --box-shadow-black: rgba(0,0,0,0.35);
 
   --hacker-green: #0f0;
   --hacker-blue: aqua;

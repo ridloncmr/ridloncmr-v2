@@ -1,7 +1,8 @@
+@import "../../../../../assets/styles/mixins.scss";
+
 .tags-wrapper {
-  display: flex;
+  @include flex-center(row, flex-start, normal);
   flex-wrap: wrap;
-  justify-content: flex-start;
   gap: 10px;
   padding: 10px 0;
 }
@@ -11,7 +12,7 @@
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
-  color: #fff;
+  color: var(--white);
   white-space: nowrap;
 }
 
@@ -24,6 +25,6 @@
   letter-spacing: 0.05rem;
 
   &:hover {
-    text-decoration: underline; // underline on hover
+    text-decoration: underline;
   }
 }

@@ -26,10 +26,9 @@
   padding: 20px;
 
   app-article-card {
+    @include flex-center(column, normal, normal);
     flex: 1 1 300px;
     max-width: 400px;
-    display: flex;
-    flex-direction: column;
   }
 }
 

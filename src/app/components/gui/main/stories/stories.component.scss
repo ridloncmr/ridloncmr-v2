@@ -1,3 +1,5 @@
+@import "../../../../../assets/styles/mixins.scss";;
+
 .article-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -7,8 +9,6 @@
 }
 
 app-article-preview {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flex-center(column, space-between, normal);
   height: 100%;
 }

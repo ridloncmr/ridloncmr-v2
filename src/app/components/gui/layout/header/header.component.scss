@@ -1,6 +1,7 @@
 @import '../../../../../assets/styles/mixins.scss';
 
 .header {
+  @include flex-center(row, flex-start, center);
   position: fixed;
   top: 0;
   left: 0;
@@ -9,10 +10,8 @@
   z-index: 1000;
   background-image: url("../../../../../assets/images/VMM_Backdrop_2.png");
   background-size: 25%;
-  display: flex;
-  align-items: center;
   padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: var(--box-shadow-black) 0px 5px 15px;
 
   .header-img {
     width: 50px;
@@ -83,21 +82,18 @@
 
 @media (max-width: 800px) {
   .header {
-    zoom: 0.8;
-    /* Scale down the footer */
+    zoom: 0.8; /* Scale down the header */
   }
 }
 
 @media (max-width: 500px) {
   .header {
-    zoom: 0.7;
-    /* Further reduce footer size */
+    zoom: 0.7; /* Further reduce header size */
   }
 
   @media (max-width: 300px) {
     .header {
-      zoom: 0.4;
-      /* Further reduce footer size */
+      zoom: 0.4; /* Further reduce header size */
     }
   }
 }

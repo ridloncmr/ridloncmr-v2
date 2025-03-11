@@ -1,17 +1,15 @@
 @import "../../../../../assets/styles/mixins.scss";
 
 .article-card {
-    display: flex;
-    flex-direction: column;
+    @include reg-text(var(--white));
+    @include flex-center(column, center, normal);
     height: 100%;
     padding: 1.5rem;
     margin: 1rem auto;
     background: var(--header-black);
     max-width: 800px;
-    color: var(-white);
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    font-family: sans-serif;
+    box-shadow: 0 4px 10px var(--box-shadow-black);
     text-align: left;
   }
 
@@ -33,7 +31,7 @@
   }
 
   .card-header {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid var(--dark-gray);
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
   }
@@ -43,7 +41,7 @@
   
     a,
     span {
-      color: #aaa;
+      color: var(--med-gray);
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -65,7 +63,7 @@
 
   .article-subtitle {
     font-size: .9rem;
-    color: #ccc;
+    color: var(--lightgray);
     margin-top: 0.25rem;
     font-style: italic;
   }
