@@ -1,8 +1,23 @@
 <!-- Welcome Content -->
-<div class="article-wrapper">
+<!-- <div class="article-wrapper parallax-bg-bf"></div> -->
+<div class="article-wrapper parallax-white">
   <div class="article-grid">
-    <ng-container *ngFor="let file of directories">
-      <app-article-preview [article]="file"></app-article-preview>
+    <app-article-card [directory]="introduction"></app-article-card>
+  </div>
+</div>
+<div class="article-wrapper parallax-bg-1">
+  <div class="article-grid">
+    <ng-container *ngFor="let exp of experienceDirectories.slice().reverse()">
+      <app-article-card [directory]="exp"></app-article-card>
     </ng-container>
   </div>
+</div>
+
+<div class="article-wrapper parallax-bg-3 featured">
+  <app-card>
+    <div class="featured-story-header">
+      Have you read? 👇
+    </div>
+    <app-article-preview [article]="featuredStory"></app-article-preview>
+  </app-card>
 </div>

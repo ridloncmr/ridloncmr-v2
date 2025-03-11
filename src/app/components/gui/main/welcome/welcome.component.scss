@@ -1,7 +1,43 @@
+@import '../../../../../assets/styles/mixins.scss';
+
+.article-wrapper {
+  @include flex-center;
+}
+
+.featured {
+  flex-direction: column;
+}
+
+.featured-story-header {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--black);
+  text-align: center;
+  letter-spacing: 1px;
+  padding-bottom: 0.5rem;
+}
+
 .article-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  @include flex-center(row, center, stretch);
+  flex-wrap: wrap;
   gap: 20px;
-  width: 100%;
   max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+
+  app-article-card {
+    flex: 1 1 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.parallax-bg-1 {
+  min-height: 300px;
+}
+
+
+.parallax-bg-3 {
+  min-height: 300px;
 }

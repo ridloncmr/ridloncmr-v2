@@ -1,4 +1,5 @@
 @import "./assets/styles/terminal.scss";
+@import "./assets/styles/mixins.scss";
 
 :root {
   --hacker-font-family: "Lucida Console", Monaco, monospace;
@@ -31,4 +32,25 @@ body {
   color: var(--white);
   font-family: var(--hacker-font-family);
   margin: 0;
+}
+
+.parallax-bg-1 {
+  @include parallax;
+  background-image: url("./assets/images/VMM_Backdrop_1.png");
+}
+
+.parallax-white {
+  @include parallax;
+  background-color: var(--white);
+  min-height: 400px;
+}
+
+.parallax-bg-bf {
+  @include parallax;
+  background-image: url("./assets/images/bonfire.jpg");
+}
+
+.parallax-bg-3 {
+  @include parallax;
+  background-image: url("./assets/images/VMM_Backdrop_3.png");
 }

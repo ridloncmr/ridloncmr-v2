@@ -11,11 +11,11 @@ import { CommonModule, SlicePipe } from '@angular/common';
   styleUrl: './article-preview.component.scss'
 })
 export class ArticlePreviewComponent {
-  @Input() article!: FileNode;
+  @Input() article!: FileNode | undefined;
 
   constructor(private router: Router) {}
 
   readMore() {
-    this.router.navigate(['/article', this.article.id]);
+    this.router.navigate(['/article', this.article?.id]);
   }
 }

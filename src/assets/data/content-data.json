@@ -23,10 +23,23 @@
             "type": "directory",
             "children": [
               {
+                "id": "msum-url",
+                "name": "MSUM Url",
+                "type": "file",
+                "content": "https://www.mnstate.edu/",
+                "isUrl": true
+              },
+              {
+                "id": "msum-logo",
+                "name": "MSUM Logo",
+                "type": "image",
+                "content": "assets/images/msum_logo.png"
+              },
+              {
                 "id": "title",
                 "name": "Title",
                 "type": "file",
-                "content": "Bachelors of Science - Computer Science"
+                "content": "Bachelors of Science<br>Computer Science"
               },
               {
                 "id": "tenure",
@@ -35,20 +48,20 @@
                 "content": "Spetember 2011 ~ May 2016"
               },
               {
-                "id": "",
-                "name": "",
+                "id": "go-drags",
+                "name": "Go Dragons",
                 "type": "file",
                 "content": "Go Dragons!"
               },
               {
-                "id": "",
-                "name": "",
+                "id": "hackathon",
+                "name": "Hackathon",
                 "type": "file",
                 "content": "Participated in programming contests and hackathons, including Digi-Key Collegiate Computing Competition, Midwest Instruction and Computer Symposium (MICS), and Hack-Fargo Hackathon."
               },
               {
-                "id": "",
-                "name": "",
+                "id": "acm-member",
+                "name": "ACM Member",
                 "type": "file",
                 "content": "Active member in MSUM Chapter of Association for Computing Machinery."
               }
@@ -60,10 +73,23 @@
             "type": "directory",
             "children": [
               {
+                "id": "aclsound-url",
+                "name": "ACL Sound Url",
+                "type": "file",
+                "content": "https://www.weddingwire.com/biz/acl-sound-fargo/3d8ad7d0f5787cdf.html",
+                "isUrl": true
+              },
+              {
+                "id": "acl-sound-logo",
+                "name": "ACL Sound Logo",
+                "type": "image",
+                "content": "assets/images/acl-sound_logo.jpg"
+              },
+              {
                 "id": "title",
                 "name": "Title",
                 "type": "file",
-                "content": "ACL Sound - DJ"
+                "content": "DJ"
               },
               {
                 "id": "tenure",
@@ -72,18 +98,31 @@
                 "content": "May 2014 ~ Spetember 2016"
               },
               {
-                "id": "",
-                "name": "",
+                "id": "dj-experience",
+                "name": "DJ Experience",
                 "type": "file",
                 "content": "Aquired a deep love and understanding of the DJ business. From picking and mixing music, to carrying gear for miles, in an effort to put on an amazing show"
               }
             ]
           },
           {
-            "id": "memory-share",
+            "id": "memoryshare",
             "name": "MemoryShare",
             "type": "directory",
             "children": [
+              {
+                "id": "memoryshare-url",
+                "name": "MemoryShare Url",
+                "type": "file",
+                "content": "https://www.memoryshare.com/",
+                "isUrl": true
+              },
+              {
+                "id": "memoryshare-logo",
+                "name": "MemoryShare Logo",
+                "type": "image",
+                "content": "assets/images/memoryshare_logo.png"
+              },
               {
                 "id": "title",
                 "name": "Title",
@@ -97,8 +136,8 @@
                 "content": "May 2015 ~ Sep 2015"
               },
               {
-                "id": "",
-                "name": "",
+                "id": "intership",
+                "name": "Intership",
                 "type": "file",
                 "content": "Gained strong understanding of startup culture by working directly with the CEO and CTO to implement company culture and strateg"
               }
@@ -110,10 +149,23 @@
             "type": "directory",
             "children": [
               {
+                "id": "allegiance-url",
+                "name": "Allegiance Url",
+                "type": "file",
+                "content": "https://teamallegiance.com/",
+                "isUrl": true
+              },
+              {
+                "id": "allegiance-logo",
+                "name": "Allegiance Logo",
+                "type": "image",
+                "content": "assets/images/allegiance_logo.jpg"
+              },
+              {
                 "id": "title",
                 "name": "Title",
                 "type": "file",
-                "content": "Scrum Master & Software Developer"
+                "content": "Scrum Master<br>Software Developer"
               },
               {
                 "id": "tenure",
@@ -122,8 +174,8 @@
                 "content": "June 2016 ~ Nov 2019"
               },
               {
-                "id": "",
-                "name": "",
+                "id": "scrum-master",
+                "name": "Srum Master",
                 "type": "file",
                 "content": "Serve as a leader for consistent frontend user experience on an Agile team practicing 'Scrum' software development methodology"
               }
@@ -134,6 +186,19 @@
             "name": "AgCode",
             "type": "directory",
             "children": [
+              {
+                "id": "agcode-url",
+                "name": "AgCode Url",
+                "type": "file",
+                "content": "https://agcode.com/",
+                "isUrl": true
+              },
+              {
+                "id": "agcode-logo",
+                "name": "AgCdoe Logo",
+                "type": "image",
+                "content": "assets/images/agcode_logo.png"
+              },
               {
                 "id": "title",
                 "name": "Title",
@@ -147,8 +212,8 @@
                 "content": "Nov 2019 ~ Nov 2022"
               },
               {
-                "id": "",
-                "name": "",
+                "id": "agile",
+                "name": "Agile",
                 "type": "file",
                 "content": "Serve as lead developer on an Agile team practicing 'Kanban' software development"
               }
@@ -159,6 +224,19 @@
             "name": "CallRevu",
             "type": "directory",
             "children": [
+              {
+                "id": "callrevu-url",
+                "name": "CallRevu Url",
+                "type": "file",
+                "content": "https://www.callrevu.com/",
+                "isUrl": true
+              },
+              {
+                "id": "callrevu-logo",
+                "name": "CallRevu Logo",
+                "type": "image",
+                "content": "assets/images/CallRevu_Logo.svg"
+              },
               {
                 "id": "title",
                 "name": "Title",
@@ -172,8 +250,8 @@
                 "content": "Nov 2022 ~ Present"
               },
               {
-                "id": "",
-                "name": "",
+                "id": "avid",
+                "name": "AVID",
                 "type": "file",
                 "content": "Developed an IVR enrollment application, a pivotal component in a comprehensive voice identification project. The IVR system utilized Azure Cognitive Services to facilitate the creation of voice profiles. Specifically responsible for crafting the enrollment process, seamlessly guiding users through profile creation via Twilio webhooks and Azure Functions. Implemented real-time communication using SignalR, ensuring a synchronized experience between IVR calls and a dedicated web app. Contributed to the project's success in achieving seamless voice profile creation and identification."
               }
