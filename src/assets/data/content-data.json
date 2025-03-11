@@ -21,6 +21,13 @@
             "id": "msum",
             "name": "MSUM",
             "type": "directory",
+            "tags": [
+              "Software Development",
+              "Computer Hardware",
+              "Python",
+              "c++",
+              "c#"
+            ],
             "children": [
               {
                 "id": "msum-url",
@@ -71,6 +78,7 @@
             "id": "acl-sound",
             "name": "ACL Sound",
             "type": "directory",
+            "tags": ["Public Speaking", "Time Management"],
             "children": [
               {
                 "id": "aclsound-url",
@@ -109,6 +117,20 @@
             "id": "memoryshare",
             "name": "MemoryShare",
             "type": "directory",
+            "tags": [
+              "jQuery",
+              "Cascading Style Sheets (CSS)",
+              "Nuget",
+              "JavaScript",
+              "Software Development",
+              "HTML5",
+              "Front-End Development",
+              "Bootstrap",
+              "C#",
+              "HTML",
+              "ASP.NET",
+              ".NET Framework"
+            ],
             "children": [
               {
                 "id": "memoryshare-url",
@@ -147,6 +169,28 @@
             "id": "allegiance",
             "name": "Allegiance",
             "type": "directory",
+            "tags": [
+              "Angular",
+              "jQuery",
+              "Azure DevOps",
+              "Agile Project Management",
+              "Cascading Style Sheets (CSS)",
+              "Kendo Ui",
+              "Public Speaking",
+              "Nuget",
+              "Continuous Integration",
+              "JavaScript",
+              "Software Development",
+              "HTML5",
+              "Front-End Development",
+              "Bootstrap",
+              "TypeScript",
+              "Scrum",
+              "C#",
+              "HTML",
+              "ASP.NET",
+              "npm"
+            ],
             "children": [
               {
                 "id": "allegiance-url",
@@ -185,6 +229,33 @@
             "id": "agcode",
             "name": "AgCode",
             "type": "directory",
+            "tags": [
+              "Angular ",
+              "SASS",
+              "Azure DevOps",
+              "Cascading Style Sheets (CSS)",
+              "SQL",
+              "Nuget",
+              "Continuous Integration",
+              "JavaScript",
+              "Software Development",
+              "HTML5",
+              "Front-End Development",
+              "Bootstrap",
+              "TypeScript",
+              "C#",
+              "Microsoft SQL Server",
+              "HTML",
+              "ASP.NET",
+              "npm",
+              "Git",
+              "Continuous Integration and Continuous Delivery (CI/CD)",
+              "ASP.NET Core",
+              "Continuous Delivery",
+              ".NET Core",
+              ".NET Framework",
+              "DevOps"
+            ],
             "children": [
               {
                 "id": "agcode-url",
@@ -223,6 +294,38 @@
             "id": "callrevu",
             "name": "CallRevu",
             "type": "directory",
+            "tags": [
+              "Angular ",
+              "SASS",
+              "Azure DevOps",
+              "Agile Project Management",
+              "Cascading Style Sheets (CSS)",
+              "SQL",
+              "Nuget",
+              "Continuous Integration",
+              "JavaScript",
+              "Azure Functions",
+              "Software Development",
+              "HTML5",
+              "Front-End Development",
+              "TypeScript",
+              "Scrum",
+              "C#",
+              "SignalR",
+              "Microsoft SQL Server",
+              "HTML",
+              "ASP.NET",
+              "BEM (Block, Element, Modifier) Naming",
+              "npm",
+              "Git",
+              "Continuous Integration and Continuous Delivery (CI/CD)",
+              "ASP.NET Core",
+              "Continuous Delivery",
+              ".NET Core",
+              ".NET Framework",
+              "Twilio",
+              "DevOps"
+            ],
             "children": [
               {
                 "id": "callrevu-url",
@@ -326,7 +429,6 @@
         "type": "file",
         "content": "PlayBall.gg is a modern rec league management SaaS focused on frictionless game organization.",
         "contentKey": "Playball"
-
       },
       {
         "id": "arg",

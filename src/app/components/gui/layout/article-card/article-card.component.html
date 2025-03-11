@@ -11,10 +11,9 @@
     <h3 class="article-subtitle" [innerHtml]="subtitle"></h3>
   </div>
   <div class="card-body">
-    <div
-      *ngFor="let section of bodySections"
-      class="article-section"
-      [innerHtml]="section"
-    ></div>
+    <div *ngFor="let section of bodySections" class="article-section" [innerHtml]="section"></div>
+  </div>
+  <div class="card-tags">
+    <app-tags *ngIf="tags.length" [tags]="tags"></app-tags>
   </div>
 </div>

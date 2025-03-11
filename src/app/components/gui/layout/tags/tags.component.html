@@ -1,0 +1,14 @@
+<div class="tags-wrapper">
+  <app-tag 
+    *ngFor="let tag of visibleTags" 
+    [tag]="tag"
+    [color]="colorsMap.get(tag) ?? '#000'">
+  </app-tag>
+
+  <div 
+    class="show-more"
+    *ngIf="tags.length > maxVisibleTags"
+    (click)="toggleCollapse()">
+    {{ collapsed ? 'Show more' : 'Show less' }}
+  </div>
+</div>
