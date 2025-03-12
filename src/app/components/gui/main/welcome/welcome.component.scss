@@ -9,20 +9,20 @@
 }
 
 .featured-story-header {
+  padding-bottom: 0.5rem;
+  color: var(--black);
   font-size: 2rem;
   font-weight: bold;
-  color: var(--black);
-  text-align: center;
   letter-spacing: 1px;
-  padding-bottom: 0.5rem;
+  text-align: center;
 }
 
 .article-grid {
   @include flex-center(row, center, stretch);
   flex-wrap: wrap;
   gap: 20px;
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
   padding: 20px;
 
   app-article-card {

@@ -3,24 +3,21 @@
 .article-preview {
   @include reg-text(var(--lightgray));
   @include flex-center(column, space-between, normal);
+  @include uniform-card(var(--header-black));
   height: 100%;
   min-height: 175px;
-  padding: 15px;
   border: 1px solid var(--gray);
-  border-radius: 8px;
-  background: var(--header-black);
-  box-shadow: var(--box-shadow-black) 0px 4px 10px;
-  transition: transform 0.2s ease-in-out;
   opacity: .95;
+  transition: transform 0.2s ease-in-out;
 
   h3 {
-    font-size: 18px;
     margin-bottom: 5px;
+    font-size: 18px;
   }
 
   p {
-    font-size: 14px;
     color: var(--lightgray);
+    font-size: 14px;
   }
 
   button {
@@ -28,12 +25,12 @@
     margin-top: 10px;
     padding: 8px 12px;
     border: none;
+    border-radius: 5px;
     background: var(--hacker-pink);
     color: var(--header-black);
     cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-
+    transition: background 0.3s ease-in-out;
+    
     &:hover {
       background: var(--hacker-blue);
     }

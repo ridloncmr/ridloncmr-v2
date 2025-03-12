@@ -1,18 +1,18 @@
 @import '../../../../../assets/styles/mixins.scss';
 
 .tabs {
+  @include reg-text(var(--header-black));
   display: flex;
   gap: 10px;
   padding-bottom: 10px;
-  @include reg-text(var(--header-black));
 
   button {
     padding: 10px 15px;
     border: none;
     background: none;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
-    font-weight: 600;
 
     &.active {
       border-bottom: 3px solid var(--hacker-pink);

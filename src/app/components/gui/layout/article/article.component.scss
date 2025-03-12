@@ -3,31 +3,26 @@
 .story-card {
   @include flex-center(column);
   @include reg-text(var(--lightgray));
-  background-color: var(--header-black);
-  padding: 25px;
-  margin: 25px;
-  border-radius: 8px;
   max-width: 1200px;
+  margin: 25px;
+  padding: 25px;
+  border-radius: 8px;
+  background-color: var(--header-black);
   text-align: left;
 }
 
 .article-content {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
   max-width: 100%;
   line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .back-btn {
-  background: none;
-  border: none;
-  color: var(--hacker-pink);
-  cursor: pointer;
-  font-size: 16px;
+  @include underline-hover-link;
   margin-bottom: 10px;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  border: none;
+  background: none;
+  font-size: 16px;
 }

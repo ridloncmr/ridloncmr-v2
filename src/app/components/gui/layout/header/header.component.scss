@@ -6,11 +6,11 @@
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
   z-index: 1000;
+  width: 100%;
+  padding: 10px;
   background-image: url("../../../../../assets/images/VMM_Backdrop_2.png");
   background-size: 25%;
-  padding: 10px;
   box-shadow: var(--box-shadow-black) 0px 5px 15px;
 
   .header-img {
@@ -20,11 +20,11 @@
 
   .header-item {
     @include reg-text(var(--white));
+    display: inline-block;
+    position: relative;
     margin-left: 15px;
     background-color: var(--header-black);
     overflow: hidden;
-    position: relative;
-    display: inline-block;
     font-weight: 500;
     font-size: 20px;
     line-height: 32px;
@@ -34,32 +34,32 @@
   .header-item::after {
     content: '';
     position: absolute;
-    width: 100%;
     left: 0;
+    width: 100%;
   }
 
   .header-item::before {
-    background-color: var(--hacker-pink);
-    height: 2px;
     bottom: 0;
-    transform-origin: 100% 50%;
+    height: 2px;
+    background-color: var(--hacker-pink);
     transform: scaleX(0);
+    transform-origin: 100% 50%;
     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
   }
 
   .header-item::after {
     content: attr(data-replace);
-    height: 100%;
     top: 0;
+    height: 100%;
+    color: var(--hacker-pink);
     transform-origin: 100%;
     transform: translate3d(200%, 0, 0);
     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-    color: var(--hacker-pink);
   }
 
   .header-item:not(.active-link):hover::before {
-    transform-origin: 0% 50%;
     transform: scaleX(1);
+    transform-origin: 0% 50%;
   }
 
   .header-item:not(.active-link):hover::after {
@@ -80,20 +80,9 @@
   color: var(--hacker-pink) !important;
 }
 
-@media (max-width: 800px) {
-  .header {
-    zoom: 0.8; /* Scale down the header */
-  }
-}
+/* Zoom [not great practice] prevents the header from becoming ridiculously large */
+@media (max-width: 800px) { .header { zoom: 0.8; } }
+@media (max-width: 500px) { .header { zoom: 0.7; }
+@media (max-width: 300px) { .header { zoom: 0.4; } }
 
-@media (max-width: 500px) {
-  .header {
-    zoom: 0.7; /* Further reduce header size */
-  }
-
-  @media (max-width: 300px) {
-    .header {
-      zoom: 0.4; /* Further reduce header size */
-    }
-  }
 }

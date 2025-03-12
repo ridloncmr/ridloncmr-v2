@@ -5,6 +5,31 @@
   justify-content: $justify;
 }
 
+@mixin responsive-grid($min-width: 250px, $gap: 20px, $max-width: 1200px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+  width: 100%;
+  max-width: $max-width;
+}
+
+@mixin uniform-card($bg: var(--header-black), $padding: 1.5rem, $radius: 8px) {
+  background: $bg;
+  padding: $padding;
+  border-radius: $radius;
+  box-shadow: 0 4px 10px var(--box-shadow-black);
+}
+
+@mixin underline-hover-link($color: var(--hacker-pink)) {
+  color: $color;
+  text-decoration: none;
+  cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 @mixin hide-scrollbar {
   /* Firefox */
   scrollbar-width: none;
@@ -19,9 +44,9 @@
 }
 
 @mixin border-box($bg: var(--black), $border: 2px solid var(--gray)) {
+  padding: 10px;
   background: $bg;
   border: $border;
-  padding: 10px;
 }
 
 @mixin hacker-text($color: var(--hacker-pink)) {
@@ -36,19 +61,19 @@
 
 
 @mixin parallax($min-height: 100vh) {
-  min-height: calc($min-height - 227px);
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  text-align: center;
-  color: var(--white);
+  min-height: calc($min-height - 227px);
+  padding-top: 2rem;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  padding-top: 2rem;
+  color: var(--white);
+  text-align: center;
 
   @media (max-width: 800px) {
     min-height: calc($min-height - 188px);

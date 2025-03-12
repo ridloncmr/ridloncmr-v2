@@ -11,20 +11,15 @@
   display: inline-block;
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
-  font-size: 0.8rem;
   color: var(--white);
+  font-size: 0.8rem;
   white-space: nowrap;
 }
 
 .show-more {
-  font-size: 0.75rem;
-  color: var(--hacker-pink);
-  cursor: pointer;
+  @include underline-hover-link;
   margin-top: 0.5rem;
-  text-align: left;
+  font-size: 0.75rem;
   letter-spacing: 0.05rem;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  text-align: left;
 }

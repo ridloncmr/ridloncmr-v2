@@ -32,10 +32,10 @@
 
 html,
 body {
+  margin: 0;
   background-color: var(--black);
   color: var(--white);
   font-family: var(--hacker-font-family);
-  margin: 0;
 }
 
 .parallax-bg-1 {
@@ -45,8 +45,8 @@ body {
 
 .parallax-white {
   @include parallax;
-  background-color: var(--white);
   min-height: 400px;
+  background-color: var(--white);
 }
 
 .parallax-bg-bf {

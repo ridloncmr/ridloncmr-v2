@@ -2,12 +2,9 @@
 
 .card {
   @include flex-center(column);
+  @include uniform-card(var(--semi-tran-white));
   width: 90%;
   max-width: 1200px;
-  padding: 1.5rem;
   border: 1px solid var(--lightgray);
-  border-radius: 8px;
-  background: var(--semi-tran-white);
-  box-shadow: var(--box-shadow-black) 0px 4px 10px;
   text-align: center;
 }
