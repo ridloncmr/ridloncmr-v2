@@ -1,20 +1,10 @@
 @import '../../../../../assets/styles/mixins.scss';
+@import '../../../../../assets/styles/animations.scss';
 
 .article-wrapper {
   @include flex-center;
-}
-
-.featured {
-  flex-direction: column;
-}
-
-.featured-story-header {
-  padding-bottom: 0.5rem;
-  color: var(--black);
-  font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-align: center;
+  height: 100%;
+  padding: 2rem 0;
 }
 
 .article-grid {
@@ -38,5 +28,24 @@
 
 
 .parallax-bg-3 {
-  min-height: 300px;
+  min-height: 350px;
+}
+
+.featured-story {
+  @include flex-center(column);
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  color: var(--white);
+  text-align: center;
+  border-radius: 8px;
+}
+
+.featured-story-header {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite alternate ease-in-out;
 }
