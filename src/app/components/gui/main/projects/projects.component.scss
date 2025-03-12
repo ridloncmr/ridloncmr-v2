@@ -1,6 +1,21 @@
 @import "../../../../../assets/styles/mixins.scss";
 
+.article-wrapper {
+  @include flex-center(column, flex-start, center);
+  height: 100%;
+  padding: 2rem 0;
+}
+
 .article-grid {
-  @include responsive-grid();
-  transition: transform 0.3s ease-in-out;
+  @include flex-center(row, center, stretch);
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+
+  app-article-card {
+    @include flex-center(column, normal, normal);
+    max-width: 500px;
+    flex: 1 1 300px;
+  }
 }

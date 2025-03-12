@@ -1,7 +1,7 @@
+export { TerminalApp } from './intro-data/terminal-app';
 export { GlitchedOut } from './stories/glitched-out';
 export { TheChildWhoSeesTooMuch } from './stories/the-child-who-sees-too-much';
 export { VanishingPoint } from './stories/vanishing-point';
-
 export { Introduction } from './intro-data/introduction';
 export { Arg } from './intro-data/glitched-out';
 export { Playball } from './intro-data/playball';

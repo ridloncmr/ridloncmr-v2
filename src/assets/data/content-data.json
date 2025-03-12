@@ -421,17 +421,68 @@
     "children": [
       {
         "id": "playball",
-        "name": "PlayBall.txt",
-        "type": "file",
-        "content": "PlayBall.gg is a modern rec league management SaaS focused on frictionless game organization.",
-        "contentKey": "Playball"
+        "name": "PlayBall",
+        "type": "directory",
+        "children": [
+          {
+            "id": "playball-logo",
+            "name": "PlayBall Logo",
+            "type": "image",
+            "content": "assets/images/playball.svg"
+          },
+          {
+            "id": "playball-url",
+            "name": "PlayBall.url",
+            "type": "file",
+            "content": "https://playball.gg",
+            "isUrl": true
+          },
+          {
+            "id": "playball",
+            "name": "PlayBall.txt",
+            "type": "file",
+            "contentKey": "Playball"
+          }
+        ]
       },
       {
-        "id": "arg",
-        "name": "ARG.txt",
-        "type": "file",
-        "content": "Developing an interactive horror ARG experience built around the GlitchedOut universe.",
-        "contentKey": "Arg"
+        "id": "terminal-app",
+        "name": "Terminal App",
+        "type": "directory",
+        "children": [
+          {
+            "id": "terminal-logo",
+            "name": "terminal Logo",
+            "type": "image",
+            "content": "assets/images/terminal.svg"
+          },
+          {
+            "id": "terminal-url",
+            "name": "terminal.url",
+            "type": "file",
+            "content": "/",
+            "isUrl": true
+          },
+          {
+            "id": "terminal",
+            "name": "terminal.txt",
+            "type": "file",
+            "contentKey": "TerminalApp"
+          }
+        ]
+      },
+      {
+        "id": "glitched-out-arg",
+        "name": "GLITCHED OUT ARG",
+        "type": "directory",
+        "children": [
+          {
+            "id": "arg",
+            "name": "ARG.txt",
+            "type": "file",
+            "contentKey": "Arg"
+          }
+        ]
       }
     ]
   },

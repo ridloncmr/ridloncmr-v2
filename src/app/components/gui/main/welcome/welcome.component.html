@@ -7,8 +7,8 @@
 </div>
 <div class="article-wrapper parallax-bg-1">
   <div class="article-grid">
-    <ng-container *ngFor="let exp of experienceDirectories.slice().reverse()">
-      <app-article-card [directory]="exp"></app-article-card>
+    <ng-container *ngFor="let dir of experienceDirectories.slice().reverse()">
+      <app-article-card [directory]="dir"></app-article-card>
     </ng-container>
   </div>
 </div>
