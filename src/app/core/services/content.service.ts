@@ -41,7 +41,8 @@ export class ContentService {
       (node) =>
         new FileNode({
           id: node.id,
-          name: node.name,
+          fileName: node.fileName,
+          guiName: node.guiName ?? node.fileName,
           type: node.type,
           content: node.content,
           isUrl: node.isUrl,

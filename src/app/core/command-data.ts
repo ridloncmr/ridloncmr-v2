@@ -103,7 +103,7 @@ export const COMMANDS: Command[] = [
             '&lt;DIR&gt;',
             TYPE_WIDTH
           )} ${''.padStart(SIZE_WIDTH, ' ')} ${padRight(
-            item.name,
+            item.fileName,
             NAME_WIDTH
           )}\n`;
         } else {
@@ -112,7 +112,7 @@ export const COMMANDS: Command[] = [
             TYPE_WIDTH,
             ' '
           )} ${padLeft(formatSize(fileSize), SIZE_WIDTH)} ${padRight(
-            item.name,
+            item.fileName,
             NAME_WIDTH
           )}\n`;
         }
@@ -172,7 +172,7 @@ export const COMMANDS: Command[] = [
       const fileName = args[0].toLowerCase();
       const location = service.getCurrentLocation();
       const fileNode = location.find(
-        (item) => item.name.toLowerCase() === fileName && item.type === 'file'
+        (item) => item.fileName.toLowerCase() === fileName && item.type === 'file'
       );
 
       if (fileNode) {
@@ -190,7 +190,7 @@ export const COMMANDS: Command[] = [
     autoComplete: (args, location) => {
       return location
         .filter((item) => item.type === 'file')
-        .map((item) => item.name)
+        .map((item) => item.fileName)
         .filter((name) =>
           args[0] ? name.toLowerCase().startsWith(args[0].toLowerCase()) : true
         ); // Suggest all on empty input
@@ -221,8 +221,8 @@ export const COMMANDS: Command[] = [
     },
     autoComplete: (args, location) => {
       return location
-        .filter((item) => item.type === 'executable' && item.name.endsWith('.exe'))
-        .map((item) => item.name)
+        .filter((item) => item.type === 'executable' && item.fileName.endsWith('.exe'))
+        .map((item) => item.fileName)
         .filter((name) =>
           args[0] ? name.toLowerCase().startsWith(args[0].toLowerCase()) : true
         ); // Suggest all on empty input

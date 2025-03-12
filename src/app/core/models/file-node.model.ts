@@ -2,7 +2,8 @@ export type FileType = 'directory' | 'file' | 'executable' | 'image';
 
 export interface IFileNode {
   id: string;
-  name: string;
+  fileName: string;
+  guiName?: string;
   type: FileType;
   children?: IFileNode[];
   content?: string;
@@ -13,7 +14,8 @@ export interface IFileNode {
 
 export class FileNode implements IFileNode {
   id: string;
-  name: string;
+  fileName: string;
+  guiName?: string;
   type: FileType;
   children?: FileNode[];
   content?: string;
@@ -23,7 +25,8 @@ export class FileNode implements IFileNode {
 
   constructor(data: IFileNode) {
     this.id = data.id;
-    this.name = data.name;
+    this.fileName = data.fileName;
+    this.guiName = data.guiName;
     this.type = data.type;
     this.content = data.content;
     this.contentKey = data.contentKey;

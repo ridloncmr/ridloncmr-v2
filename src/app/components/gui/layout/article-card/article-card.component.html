@@ -4,8 +4,8 @@
       <img class="article-image" [src]="imagePath" [alt]="title" />
     </div>
     <h2 class="directory-title">
-      <a *ngIf="url" [href]="url" target="_blank">{{ directory?.name }}</a>
-      <span *ngIf="!url">{{ directory?.name }}</span>
+      <a *ngIf="url" [href]="url" target="_blank">{{ directory?.guiName }}</a>
+      <span *ngIf="!url">{{ directory?.guiName }}</span>
     </h2>
     <h1 class="article-title" *ngIf="title" [innerHtml]="title"></h1>
     <h3 class="article-subtitle" *ngIf="subtitle" [innerHtml]="subtitle"></h3>

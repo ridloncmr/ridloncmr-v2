@@ -3,6 +3,6 @@
     *ngFor="let dir of directories"
     (click)="selectTab(dir.id)"
     [class.active]="activeTab === dir.id">
-    {{ dir.name }}
+    {{ dir.fileName }}
   </button>
 </div>

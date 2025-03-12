@@ -1,25 +1,26 @@
 [
   {
     "id": "ridloncmr",
-    "name": "Ridloncmr",
+    "fileName": "Ridloncmr",
     "type": "directory",
     "children": [
       {
         "id": "introduction",
-        "name": "Introduction.txt",
+        "fileName": "Introduction.txt",
+        "guiName": "",
         "type": "file",
         "content": "Introduction",
         "contentKey": "Introduction"
       },
       {
         "id": "experience",
-        "name": "Experience",
+        "fileName": "Experience",
         "type": "directory",
         "content": "My experience as a developer",
         "children": [
           {
             "id": "msum",
-            "name": "MSUM",
+            "fileName": "MSUM",
             "type": "directory",
             "tags": [
               "c#",
@@ -31,44 +32,44 @@
             "children": [
               {
                 "id": "msum-url",
-                "name": "MSUM Url",
+                "fileName": "MSUM.url",
                 "type": "file",
                 "content": "https://www.mnstate.edu/",
                 "isUrl": true
               },
               {
                 "id": "msum-logo",
-                "name": "MSUM Logo",
+                "fileName": "MSUM.logo",
                 "type": "image",
                 "content": "assets/images/msum_logo.png"
               },
               {
                 "id": "title",
-                "name": "Title",
+                "fileName": "Title.txt",
                 "type": "file",
                 "content": "Bachelors of Science<br>Computer Science"
               },
               {
                 "id": "subtitle",
-                "name": "Tenure",
+                "fileName": "Tenure.txt",
                 "type": "file",
                 "content": "Spetember 2011 ~ May 2016"
               },
               {
                 "id": "go-drags",
-                "name": "Go Dragons",
+                "fileName": "Go-Dragons.txt",
                 "type": "file",
                 "content": "Go Dragons!"
               },
               {
                 "id": "hackathon",
-                "name": "Hackathon",
+                "fileName": "Hackathon.Txt",
                 "type": "file",
                 "content": "Participated in programming contests and hackathons, including Digi-Key Collegiate Computing Competition, Midwest Instruction and Computer Symposium (MICS), and Hack-Fargo Hackathon."
               },
               {
                 "id": "acm-member",
-                "name": "ACM Member",
+                "fileName": "ACM-Member.txt",
                 "type": "file",
                 "content": "Active member in MSUM Chapter of Association for Computing Machinery."
               }
@@ -76,38 +77,38 @@
           },
           {
             "id": "acl-sound",
-            "name": "ACL Sound",
+            "fileName": "ACL Sound",
             "type": "directory",
             "tags": ["Public Speaking", "Time Management"],
             "children": [
               {
                 "id": "aclsound-url",
-                "name": "ACL Sound Url",
+                "fileName": "ACL-Sound.url",
                 "type": "file",
                 "content": "https://www.weddingwire.com/biz/acl-sound-fargo/3d8ad7d0f5787cdf.html",
                 "isUrl": true
               },
               {
                 "id": "acl-sound-logo",
-                "name": "ACL Sound Logo",
+                "fileName": "ACL-Sound.logo",
                 "type": "image",
                 "content": "assets/images/acl-sound_logo.jpg"
               },
               {
                 "id": "title",
-                "name": "Title",
+                "fileName": "Title.txt",
                 "type": "file",
                 "content": "DJ"
               },
               {
                 "id": "subtitle",
-                "name": "Tenure",
+                "fileName": "Tenure.txt",
                 "type": "file",
                 "content": "May 2014 ~ Spetember 2016"
               },
               {
                 "id": "dj-experience",
-                "name": "DJ Experience",
+                "fileName": "DJ-Experience.txt",
                 "type": "file",
                 "content": "Aquired a deep love and understanding of the DJ business. From picking and mixing music, to carrying gear for miles, in an effort to put on an amazing show"
               }
@@ -115,7 +116,7 @@
           },
           {
             "id": "memoryshare",
-            "name": "MemoryShare",
+            "fileName": "MemoryShare",
             "type": "directory",
             "tags": [
               "ASP.NET",
@@ -134,32 +135,32 @@
             "children": [
               {
                 "id": "memoryshare-url",
-                "name": "MemoryShare Url",
+                "fileName": "MemoryShare.url",
                 "type": "file",
                 "content": "https://www.memoryshare.com/",
                 "isUrl": true
               },
               {
                 "id": "memoryshare-logo",
-                "name": "MemoryShare Logo",
+                "fileName": "MemoryShare.logo",
                 "type": "image",
                 "content": "assets/images/memoryshare_logo.png"
               },
               {
                 "id": "title",
-                "name": "Title",
+                "fileName": "Title.txt",
                 "type": "file",
                 "content": "Intern Developer"
               },
               {
                 "id": "subtitle",
-                "name": "Tenure",
+                "fileName": "Tenure.txt",
                 "type": "file",
                 "content": "May 2015 ~ Sep 2015"
               },
               {
                 "id": "intership",
-                "name": "Intership",
+                "fileName": "Intership.txt",
                 "type": "file",
                 "content": "Gained strong understanding of startup culture by working directly with the CEO and CTO to implement company culture and strateg"
               }
@@ -167,7 +168,7 @@
           },
           {
             "id": "allegiance",
-            "name": "Allegiance",
+            "fileName": "Allegiance",
             "type": "directory",
             "tags": [
               "Scrum",
@@ -194,32 +195,32 @@
             "children": [
               {
                 "id": "allegiance-url",
-                "name": "Allegiance Url",
+                "fileName": "Allegiance.url",
                 "type": "file",
                 "content": "https://teamallegiance.com/",
                 "isUrl": true
               },
               {
                 "id": "allegiance-logo",
-                "name": "Allegiance Logo",
+                "fileName": "Allegiance.logo",
                 "type": "image",
                 "content": "assets/images/allegiance_logo.jpg"
               },
               {
                 "id": "title",
-                "name": "Title",
+                "fileName": "Title.txt",
                 "type": "file",
                 "content": "Scrum Master<br>Software Developer"
               },
               {
                 "id": "subtitle",
-                "name": "Tenure",
+                "fileName": "Tenure.txt",
                 "type": "file",
                 "content": "June 2016 ~ Nov 2019"
               },
               {
                 "id": "scrum-master",
-                "name": "Srum Master",
+                "fileName": "Srum-Master.txt",
                 "type": "file",
                 "content": "Serve as a leader for consistent frontend user experience on an Agile team practicing 'Scrum' software development methodology"
               }
@@ -227,7 +228,7 @@
           },
           {
             "id": "agcode",
-            "name": "AgCode",
+            "fileName": "AgCode",
             "type": "directory",
             "tags": [
               "Azure DevOps",
@@ -257,32 +258,32 @@
             "children": [
               {
                 "id": "agcode-url",
-                "name": "AgCode Url",
+                "fileName": "AgCode.url",
                 "type": "file",
                 "content": "https://agcode.com/",
                 "isUrl": true
               },
               {
                 "id": "agcode-logo",
-                "name": "AgCdoe Logo",
+                "fileName": "AgCdoe.logo",
                 "type": "image",
                 "content": "assets/images/agcode_logo.png"
               },
               {
                 "id": "title",
-                "name": "Title",
+                "fileName": "Title.txt",
                 "type": "file",
                 "content": "Lead Developer"
               },
               {
                 "id": "subtitle",
-                "name": "Tenure",
+                "fileName": "Tenure.txt",
                 "type": "file",
                 "content": "Nov 2019 ~ Nov 2022"
               },
               {
                 "id": "agile",
-                "name": "Agile",
+                "fileName": "Agile.txt",
                 "type": "file",
                 "content": "Serve as lead developer on an Agile team practicing 'Kanban' software development"
               }
@@ -290,7 +291,7 @@
           },
           {
             "id": "callrevu",
-            "name": "CallRevu",
+            "fileName": "CallRevu",
             "type": "directory",
             "tags": [
               ".NET",
@@ -325,32 +326,32 @@
             "children": [
               {
                 "id": "callrevu-url",
-                "name": "CallRevu Url",
+                "fileName": "CallRevu.url",
                 "type": "file",
                 "content": "https://www.callrevu.com/",
                 "isUrl": true
               },
               {
                 "id": "callrevu-logo",
-                "name": "CallRevu Logo",
+                "fileName": "CallRevu.logo",
                 "type": "image",
                 "content": "assets/images/CallRevu_Logo.svg"
               },
               {
                 "id": "title",
-                "name": "Title",
+                "fileName": "Title.txt",
                 "type": "file",
                 "content": "Application Architect"
               },
               {
                 "id": "subtitle",
-                "name": "Tenure",
+                "fileName": "Tenure.txt",
                 "type": "file",
                 "content": "Nov 2022 ~ Present"
               },
               {
                 "id": "avid",
-                "name": "AVID",
+                "fileName": "AVID.txt",
                 "type": "file",
                 "content": "Developed an IVR enrollment application, a pivotal component in a comprehensive voice identification project. The IVR system utilized Azure Cognitive Services to facilitate the creation of voice profiles. Specifically responsible for crafting the enrollment process, seamlessly guiding users through profile creation via Twilio webhooks and Azure Functions. Implemented real-time communication using SignalR, ensuring a synchronized experience between IVR calls and a dedicated web app. Contributed to the project's success in achieving seamless voice profile creation and identification."
               }
@@ -360,38 +361,41 @@
       },
       {
         "id": "hacker-program",
-        "name": "hacker.exe",
+        "fileName": "hacker.exe",
         "type": "executable"
       }
     ]
   },
   {
     "id": "stories",
-    "name": "Stories",
+    "fileName": "Stories",
     "type": "directory",
     "children": [
       {
         "id": "GlitchVerse",
-        "name": "GlitchVerse",
+        "fileName": "GlitchVerse",
         "type": "directory",
         "children": [
           {
             "id": "glitched-out",
-            "name": "GlitchedOut.txt",
+            "fileName": "GlitchedOut.txt",
+            "guiName": "I Glitched Out",
             "type": "file",
             "content": "GlitchedOut",
             "contentKey": "GlitchedOut"
           },
           {
             "id": "vanishing-point",
-            "name": "VanishingPoint.txt",
+            "fileName": "VanishingPoint.txt",
+            "guiName": "Vanishing Point",
             "type": "file",
             "content": "VanishingPoint",
             "contentKey": "VanishingPoint"
           },
           {
             "id": "the-child-who-sees-too-much",
-            "name": "TheChildWhoSeeTooMuch.txt",
+            "fileName": "TheChildWhoSeesTooMuch.txt",
+            "guiName": "The Child Who Sees Too Much",
             "type": "file",
             "content": "TheChildWhoSeesTooMuch",
             "contentKey": "TheChildWhoSeesTooMuch"
@@ -400,27 +404,31 @@
       },
       {
         "id": "hunger-that-remains",
-        "name": "HungerThatRemains.txt",
+        "fileName": "HungerThatRemains.txt",
+        "guiName": "Hunger That Remains",
         "type": "file",
         "content": "HungerThatRemains",
         "contentKey": "HungerThatRemains"
       },
       {
         "id": "i-woke-up-dead-and-saw-who-took-my-place",
-        "name": "IWokeUpDeadAndSawWhoTookMyPlace.txt",
+        "fileName": "IWokeUpDeadAndSawWhoTookMyPlace.txt",
+        "guiName": "I Woke Up Dead and Saw Who Took My Place",
         "type": "file",
         "contentKey": "IWokeUp"
       },
       {
         "id": "bridge-of-death",
-        "name": "BridgeOfDeath.txt",
+        "fileName": "BridgeOfDeath.txt",
+        "guiName": "Bridge Of Death",
         "type": "file",
         "content": "BridgeOfDeath",
         "contentKey": "BridgeOfDeath"
       },
       {
         "id": "mr-kettles",
-        "name": "MrKettles.txt",
+        "fileName": "MrKettles.txt",
+        "guiName": "I Remebered Mr. Kettles and I wish I Wouldn't Have",
         "type": "file",
         "contentKey": "MrKettles"
       }
@@ -428,30 +436,30 @@
   },
   {
     "id": "projects",
-    "name": "Projects",
+    "fileName": "Projects",
     "type": "directory",
     "children": [
       {
         "id": "playball",
-        "name": "PlayBall",
+        "fileName": "PlayBall",
         "type": "directory",
         "children": [
           {
             "id": "playball-logo",
-            "name": "PlayBall Logo",
+            "fileName": "PlayBall.logo",
             "type": "image",
             "content": "assets/images/playball.svg"
           },
           {
             "id": "playball-url",
-            "name": "PlayBall.url",
+            "fileName": "PlayBall.url",
             "type": "file",
             "content": "https://playball.gg",
             "isUrl": true
           },
           {
             "id": "playball",
-            "name": "PlayBall.txt",
+            "fileName": "PlayBall.txt",
             "type": "file",
             "contentKey": "Playball"
           }
@@ -459,25 +467,25 @@
       },
       {
         "id": "terminal-app",
-        "name": "Terminal App",
+        "fileName": "Terminal App",
         "type": "directory",
         "children": [
           {
             "id": "terminal-logo",
-            "name": "terminal Logo",
+            "fileName": "Terminal.logo",
             "type": "image",
             "content": "assets/images/terminal.svg"
           },
           {
             "id": "terminal-url",
-            "name": "terminal.url",
+            "fileName": "Terminal.url",
             "type": "file",
             "content": "/",
             "isUrl": true
           },
           {
             "id": "terminal",
-            "name": "terminal.txt",
+            "fileName": "terminal.txt",
             "type": "file",
             "contentKey": "TerminalApp"
           }
@@ -485,12 +493,12 @@
       },
       {
         "id": "glitched-out-arg",
-        "name": "GLITCHED OUT ARG",
+        "fileName": "GLITCHED OUT ARG",
         "type": "directory",
         "children": [
           {
             "id": "arg",
-            "name": "ARG.txt",
+            "fileName": "ARG.txt",
             "type": "file",
             "contentKey": "Arg"
           }
@@ -500,23 +508,23 @@
   },
   {
     "id": "contact",
-    "name": "Contact",
+    "fileName": "Contact",
     "type": "directory",
     "children": [
       {
         "id": "linkedin",
-        "name": "LinkedIn",
+        "fileName": "LinkedIn",
         "type": "directory",
         "children": [
           {
             "id": "linkedin-logo",
-            "name": "LinkedIn Logo",
+            "fileName": "LinkedIn Logo",
             "type": "image",
             "content": "assets/images/linkedin.svg"
           },
           {
             "id": "linkedin-url",
-            "name": "LinkedIn.url",
+            "fileName": "LinkedIn.url",
             "type": "file",
             "content": "www.linkedin.com/in/christian-ridlon-05507312b",
             "isUrl": true
@@ -525,18 +533,18 @@
       },
       {
         "id": "github",
-        "name": "GitHub",
+        "fileName": "GitHub",
         "type": "directory",
         "children": [
           {
             "id": "github-logo",
-            "name": "GitHub Logo",
+            "fileName": "GitHub.logo",
             "type": "image",
             "content": "assets/images/github.svg"
           },
           {
             "id": "github-url",
-            "name": "GitHub.url",
+            "fileName": "GitHub.url",
             "type": "file",
             "content": "https://github.com/ridloncmr",
             "isUrl": true
@@ -544,19 +552,19 @@
         ]
       },
       {
-        "type": "directory",
         "id": "email",
-        "name": "Email",
+        "fileName": "Email",
+        "type": "directory",
         "children": [
           {
             "id": "email-logo",
-            "name": "Email Logo",
+            "fileName": "Email.logo",
             "type": "image",
             "content": "assets/images/email.svg"
           },
           {
             "id": "email-url",
-            "name": "Email.url",
+            "fileName": "Email.url",
             "type": "file",
             "isUrl": true,
             "content": "ridloncmr@gmail.com"
@@ -564,19 +572,19 @@
         ]
       },
       {
-        "type": "directory",
         "id": "reddit",
-        "name": "Reddit",
+        "fileName": "Reddit",
+        "type": "directory",
         "children": [
           {
             "id": "reddit-logo",
-            "name": "Reddit Logo",
+            "fileName": "Reddit.logo",
             "type": "image",
             "content": "assets/images/reddit.svg"
           },
           {
             "id": "reddit-url",
-            "name": "reddit.url",
+            "fileName": "reddit.url",
             "type": "file",
             "isUrl": true,
             "content": "https://www.reddit.com/user/Glitchbound_0x00/"
