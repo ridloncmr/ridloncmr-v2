@@ -1,13 +1,27 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TagComponent } from '../tag/tag.component';
+import { animate, query, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-tags',
   standalone: true,
   imports: [CommonModule, TagComponent],
   templateUrl: './tags.component.html',
-  styleUrls: ['./tags.component.scss']
+  styleUrls: ['./tags.component.scss'],  
+  animations: [
+    trigger('listAnimation', [
+      transition(':enter', [
+        query(':self', [
+          style({ opacity: 0, transform: 'translateY(-10px)' }),
+          animate('300ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+        ], { optional: true })
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({ opacity: 0, transform: 'translateY(-10px)' }))
+      ])
+    ])
+  ]
 })
 export class TagsComponent implements OnInit {
   @Input() tags: string[] = [];
