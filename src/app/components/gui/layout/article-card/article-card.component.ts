@@ -24,18 +24,18 @@ export class ArticleCardComponent implements OnChanges {
 
   ngOnChanges(): void {
     if (!this.directory) return;
+    console.log(this.directory);
 
     if (this.directory.type === 'file') {
       this.title = this.directory.id === 'title' ? this.directory.content ?? '' : '';
-      this.subtitle = this.directory.id === 'tenure' ? this.directory.content ?? '' : '';
-      this.bodySections = (this.directory.id !== 'title' && this.directory.id !== 'tenure') ? [this.directory.content ?? ''] : [];
-      console.log("WTF", this.bodySections);
+      this.subtitle = this.directory.id === 'subtitle' ? this.directory.content ?? '' : '';
+      this.bodySections = (this.directory.id !== 'title' && this.directory.id !== 'subtitle') ? [this.directory.content ?? ''] : [];
     } else if (this.directory.children) {
       const children = this.directory.children;
 
-      // get title and dubtitle (title and tenure)
+      // get title and dubtitle (title and subtitle)
       this.title = children.find(child => child.id === 'title')?.content ?? '';
-      this.subtitle = children.find(child => child.id === 'tenure')?.content ?? '';
+      this.subtitle = children.find(child => child.id === 'subtitle')?.content ?? '';
 
       // Check for image nodes within children
       const imageNode = children.find(child => child.type === 'image');
@@ -49,7 +49,7 @@ export class ArticleCardComponent implements OnChanges {
       this.tags = this.directory.tags ?? [];
 
       this.bodySections = children
-        .filter(child => child.id !== 'title' && child.id !== 'tenure' && child.type !== 'image' && !child.isUrl)
+        .filter(child => child.id !== 'title' && child.id !== 'subtitle' && child.type !== 'image' && !child.isUrl)
         .map(child => child.content ?? '');
     }
   }

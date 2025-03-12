@@ -1,5 +1,5 @@
 <div class="article-card">
-  <div class="card-header" *ngIf="directory?.type != 'file'">
+  <div class="card-header" [ngClass]="{ 'card-header-border': bodySections.length }" *ngIf="directory?.type != 'file'">
     <div class="article-image-wrapper" *ngIf="imagePath">
       <img class="article-image" [src]="imagePath" [alt]="title" />
     </div>
@@ -7,13 +7,13 @@
       <a *ngIf="url" [href]="url" target="_blank">{{ directory?.name }}</a>
       <span *ngIf="!url">{{ directory?.name }}</span>
     </h2>
-    <h1 class="article-title" [innerHtml]="title"></h1>
-    <h3 class="article-subtitle" [innerHtml]="subtitle"></h3>
+    <h1 class="article-title" *ngIf="title" [innerHtml]="title"></h1>
+    <h3 class="article-subtitle" *ngIf="subtitle" [innerHtml]="subtitle"></h3>
   </div>
-  <div class="card-body">
+  <div class="card-body" *ngIf="bodySections.length">
     <div *ngFor="let section of bodySections" class="article-section" [innerHtml]="section"></div>
   </div>
-  <div class="card-tags">
-    <app-tags *ngIf="tags.length" [tags]="tags"></app-tags>
+  <div class="card-tags" *ngIf="tags.length">
+    <app-tags [tags]="tags"></app-tags>
   </div>
 </div>

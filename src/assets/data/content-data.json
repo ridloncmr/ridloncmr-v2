@@ -49,7 +49,7 @@
                 "content": "Bachelors of Science<br>Computer Science"
               },
               {
-                "id": "tenure",
+                "id": "subtitle",
                 "name": "Tenure",
                 "type": "file",
                 "content": "Spetember 2011 ~ May 2016"
@@ -100,7 +100,7 @@
                 "content": "DJ"
               },
               {
-                "id": "tenure",
+                "id": "subtitle",
                 "name": "Tenure",
                 "type": "file",
                 "content": "May 2014 ~ Spetember 2016"
@@ -152,7 +152,7 @@
                 "content": "Intern Developer"
               },
               {
-                "id": "tenure",
+                "id": "subtitle",
                 "name": "Tenure",
                 "type": "file",
                 "content": "May 2015 ~ Sep 2015"
@@ -212,7 +212,7 @@
                 "content": "Scrum Master<br>Software Developer"
               },
               {
-                "id": "tenure",
+                "id": "subtitle",
                 "name": "Tenure",
                 "type": "file",
                 "content": "June 2016 ~ Nov 2019"
@@ -275,7 +275,7 @@
                 "content": "Lead Developer"
               },
               {
-                "id": "tenure",
+                "id": "subtitle",
                 "name": "Tenure",
                 "type": "file",
                 "content": "Nov 2019 ~ Nov 2022"
@@ -343,7 +343,7 @@
                 "content": "Application Architect"
               },
               {
-                "id": "tenure",
+                "id": "subtitle",
                 "name": "Tenure",
                 "type": "file",
                 "content": "Nov 2022 ~ Present"
@@ -442,23 +442,83 @@
     "children": [
       {
         "id": "linkedin",
-        "name": "LinkedIn.url",
-        "type": "file",
-        "content": "www.linkedin.com/in/christian-ridlon-05507312b",
-        "isUrl": true
+        "name": "LinkedIn",
+        "type": "directory",
+        "children": [
+          {
+            "id": "linkedin-logo",
+            "name": "LinkedIn Logo",
+            "type": "image",
+            "content": "assets/images/linkedin.svg"
+          },
+          {
+            "id": "linkedin-url",
+            "name": "LinkedIn.url",
+            "type": "file",
+            "content": "www.linkedin.com/in/christian-ridlon-05507312b",
+            "isUrl": true
+          }
+        ]
       },
       {
         "id": "github",
-        "name": "GitHub.url",
-        "type": "file",
-        "content": "https://github.com/ridloncmr",
-        "isUrl": true
+        "name": "GitHub",
+        "type": "directory",
+        "children": [
+          {
+            "id": "github-logo",
+            "name": "GitHub Logo",
+            "type": "image",
+            "content": "assets/images/github.svg"
+          },
+          {
+            "id": "github-url",
+            "name": "GitHub.url",
+            "type": "file",
+            "content": "https://github.com/ridloncmr",
+            "isUrl": true
+          }
+        ]
       },
       {
+        "type": "directory",
         "id": "email",
-        "name": "Email.txt",
-        "type": "file",
-        "content": "ridloncmr@gmail.com"
+        "name": "Email",
+        "children": [
+          {
+            "id": "email-logo",
+            "name": "Email Logo",
+            "type": "image",
+            "content": "assets/images/email.svg"
+          },
+          {
+            "id": "email-url",
+            "name": "Email.url",
+            "type": "file",
+            "isUrl": true,
+            "content": "ridloncmr@gmail.com"
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "id": "reddit",
+        "name": "Reddit",
+        "children": [
+          {
+            "id": "reddit-logo",
+            "name": "Reddit Logo",
+            "type": "image",
+            "content": "assets/images/reddit.svg"
+          },
+          {
+            "id": "reddit-url",
+            "name": "reddit.url",
+            "type": "file",
+            "isUrl": true,
+            "content": "https://www.reddit.com/user/Glitchbound_0x00/"
+          }
+        ]
       }
     ]
   }

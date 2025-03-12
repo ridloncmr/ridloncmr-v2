@@ -2,15 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FileNode } from '../../../../core/models/file-node.model';
 import { ContentService } from '../../../../core/services/content.service';
-import { ArticlePreviewComponent } from '../../layout/article-preview/article-preview.component';
-import { CardComponent } from '../../layout/card/card.component';
-import { TabComponent } from '../../layout/tab/tab.component';
 import { BaseFileComponent } from '../base-file.component';
+import { ArticleCardComponent } from '../../layout/article-card/article-card.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, TabComponent, CardComponent, ArticlePreviewComponent],
+  imports: [CommonModule, ArticleCardComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
