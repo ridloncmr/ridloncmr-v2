@@ -29,19 +29,8 @@ app-article-preview {
   max-width: 100%;
 }
 
-@media (max-width:720px) {
-  app-article-preview {
-    min-width: 500px;
-  }
-}
 
-@media (max-width:480px) {
-  app-article-preview {
-    min-width: 400px;
-  }
-}
-
-@media (max-width:360px) {
+@media (max-width:375px) {
   app-article-preview {
     min-width: 300px;
   }
