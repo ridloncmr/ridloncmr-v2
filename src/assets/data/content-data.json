@@ -406,11 +406,23 @@
         "contentKey": "HungerThatRemains"
       },
       {
+        "id": "i-woke-up-dead-and-saw-who-took-my-place",
+        "name": "IWokeUpDeadAndSawWhoTookMyPlace.txt",
+        "type": "file",
+        "contentKey": "IWokeUp"
+      },
+      {
         "id": "bridge-of-death",
         "name": "BridgeOfDeath.txt",
         "type": "file",
         "content": "BridgeOfDeath",
         "contentKey": "BridgeOfDeath"
+      },
+      {
+        "id": "mr-kettles",
+        "name": "MrKettles.txt",
+        "type": "file",
+        "contentKey": "MrKettles"
       }
     ]
   },

@@ -1,10 +1,54 @@
-@import "../../../../../assets/styles/mixins.scss";;
+@import "../../../../../assets/styles/mixins.scss";
+
+.article-wrapper {
+  @include flex-center(column, flex-start, center);
+  padding: 2rem 0;
+}
+
+app-card {
+  max-width: calc(100% - 2rem);
+  padding: 2rem;
+}
 
 .article-grid {
-  @include responsive-grid();
+  @include flex-center(row, center, center);
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+app-tab {
+  align-self: flex-start;
 }
 
 app-article-preview {
-  @include flex-center(column, space-between, normal);
-  height: 100%;
+  @include flex-center(column, normal, normal);
+  flex: 1 1 calc(33.333% - 2rem);
+  width: 100%;
+  min-width: 300px;
+  max-width: 100%;
+}
+
+@media (max-width:720px) {
+  app-article-preview {
+    min-width: 500px;
+  }
+}
+
+@media (max-width:480px) {
+  app-article-preview {
+    min-width: 400px;
+  }
+}
+
+@media (max-width:360px) {
+  app-article-preview {
+    min-width: 300px;
+  }
+}
+
+@media (max-width:300px) {
+  app-article-preview {
+    min-width: 225px;
+  }
 }
