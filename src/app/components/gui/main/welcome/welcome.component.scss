@@ -20,6 +20,45 @@
     flex: 1 1 300px;
     max-width: 400px;
   }
+
+  img {
+    width: 400px;
+    border-radius: 8px;
+  }
+}
+
+:host ::ng-deep app-article-card .article-card {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+#yo {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 10em;
+  font-weight: 500;
+}
+
+#yolo {
+  position: absolute;
+  top: 350px;
+  left: 6%;
+  font-size: 2.5em;
+
+  div {
+    padding-top: 20px;
+  }
 }
 
 .parallax-bg-1 {
