@@ -6,8 +6,8 @@ This project is a **terminal-style web application** designed to serve content d
 - **Built with Angular 17**
   - This project is specifically developed using **Angular 17** to keep up with the latest features and best practices.
   - It serves as a practice ground for updating Angular applications.
-- **Hosted on Vercel**
-  - The site is deployed on **Vercel** for fast, reliable, and scalable hosting.
+- **Hosted on Firebase**
+  - The site is deployed on **Firebase** for fast, reliable, and scalable hosting. And access to firestore, auth, and more...
 
 ---
 
