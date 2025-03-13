@@ -6,15 +6,13 @@
 }
 
 app-card {
-  max-width: calc(100% - 2rem);
+  max-width: 1910px;
   padding: 2rem;
 }
 
 .article-grid {
-  @include flex-center(row, center, stretch);
-  flex-wrap: wrap;
-  gap: 2rem;
-  width: 100%;
+  @include responsive-grid;
+  justify-content: center;
 }
 
 app-tab {
@@ -22,22 +20,25 @@ app-tab {
 }
 
 app-article-preview {
-  @include flex-center(column, normal, normal);
-  flex: 1 1 calc(33.333% - 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-width: 300px;
-  max-width: 100%;
+  max-width: 500px; // Ensures uniform width
+  box-sizing: border-box;
 }
 
-
-@media (max-width:375px) {
-  app-article-preview {
-    min-width: 300px;
+/* Adjust for responsiveness */
+@media (max-width: 1200px) {
+  .article-grid {
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); // 2 columns per row when screen is smaller
   }
 }
 
-@media (max-width:300px) {
-  app-article-preview {
-    min-width: 225px;
+@media (max-width: 768px) {
+  .article-grid {
+    grid-template-columns: repeat(1, minmax(300px, 1fr)); // 1 column per row for mobile screens
   }
 }

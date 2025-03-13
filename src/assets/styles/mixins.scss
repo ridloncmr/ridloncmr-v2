@@ -5,9 +5,9 @@
   justify-content: $justify;
 }
 
-@mixin responsive-grid($min-width: 250px, $gap: 20px, $max-width: 1200px) {
+@mixin responsive-grid($cols: 3, $min-width: 300px, $gap: 1rem, $max-width: 100%) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  grid-template-columns: repeat($cols, minmax($min-width, 1fr));
   gap: $gap;
   width: 100%;
   max-width: $max-width;

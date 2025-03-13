@@ -1,28 +1,61 @@
 @import '../../../../../assets/styles/mixins.scss';
 
 .story-card {
-  @include flex-center(column);
-  @include reg-text(var(--lightgray));
-  max-width: 1200px;
-  margin: 25px;
-  padding: 25px;
-  border-radius: 8px;
-  background-color: var(--header-black);
-  text-align: left;
+  @include flex-center(column, flex-start, center);
+  padding: 2rem 0;
 }
 
 .article-content {
+  @include reg-text(var(--white));
+  @include uniform-card;
+  position: relative;
   max-width: 100%;
+  margin: 0 2rem;
   line-height: 1.5;
   word-wrap: break-word;
+  font-size: 1.15rem;
   overflow-wrap: break-word;
   white-space: pre-wrap;
+  text-align: left;
+
+  footer,
+  header {
+    text-align: center;
+  }
+
+  header {
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--dark-gray);
+  }
+}
+.x {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 20px;
+  padding: 1rem;
+  fill: var(--hacker-pink);
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+
+
+  &:hover {
+    fill: var(--hacker-blue);
+  }
 }
 
-.back-btn {
-  @include underline-hover-link;
-  margin-bottom: 10px;
+button {
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 8px 12px;
   border: none;
-  background: none;
-  font-size: 16px;
+  border-radius: 5px;
+  background: var(--hacker-pink);
+  color: var(--header-black);
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: var(--hacker-blue);
+  }
 }
